@@ -1,0 +1,583 @@
+\documentclass{article}
+\usepackage{forest}
+\usepackage{tikz}
+\usepackage{ot-tableau}
+\usepackage[backend=biber, style=authoryear-icomp]{biblatex}
+\usepackage{easylist}
+\usepackage{hanging}
+\usepackage{hyperref}
+\usepackage{blindtext}
+\usepackage{tipa}
+\usepackage{cgloss4e}
+\usepackage{gb4e}
+\usepackage{qtree}
+\usepackage{enumerate}
+\usepackage{longtable}
+\usepackage{textgreek}
+\addbibresource{$HOME/Documents/LaTeX/uni.bib}
+
+\usetikzlibrary{calc}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+
+
+\usetikzlibrary{shapes.geometric, arrows}
+
+\tikzset{Above/.style={midway,above,font=\scriptsize,text width=1.5cm,align=center,},Below/.style={midway,below,font=\scriptsize,text width=1.5cm,align=center}}
+\tikzstyle{box} = [rectangle, centered, draw=black,minimum width=3cm, minimum height=1cm]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\tikzset{centered/.style=}
+
+\title{Scope without Syntax: A Game Theoretic Approach}
+\author{Luke M. Smith}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	Here I argue that the commonly (and uncommonly) known facts about the availability of quantifier scope interpretations fall out cleanly from communicative constraints which Speakers and Hearers tactically navigate to converge on the intended meaning of an utterance.
+I model this Game Theoretically, as a kind of cooperation game between the Speaker and Hearer: both benefit from 
+\end{abstract}
+
+
+\section{Assumptions}
+
+
+Before proceeding, I'll make some \emph{a priori} assumptions about scope interpretations.
+These could likely be justified on already known pragmatic or processing constraints, but I will not attempt to do so here.
+We will see, however, that much of the diversity of scope can be accounted for merely taking these as interactive assumptions.
+
+\begin{enumerate}
+\item Speakers and listeners prefer for quantifiers to be in ``surface scope'' order.
+\item ``Transformations'' classically named (e.g. passives) are ``costly'' or ``dispreferred'' in some sense.
+\item ``Scrambling'' in languages which exhibit it, is not similarly costly.
+\end{enumerate}
+
+\section{Model}
+
+Additionally, it's important to be clear about the Game Theoretics of communication.
+Resolving scope ambiguities like that in (\ref{first}) is a kind of \emph{Battle of the Sexes}.
+That is, two speakers must converge on the same interpretation of a sentence.
+If the speaker intends for a universal quantifier, such as \emph{every}, to scope over an existential one, such as \emph{some}, he ideally must word his sentence in such a way to communicate this.
+
+To be more specific, we can say this is a kind of 3-player coordination game.
+Player 0, who we can term \textbf{Nature} dictates what the needed scope interpretation should be, that is, whether, based on circumstances, a universal quantifier must scope over an existential quantifier, or \emph{vice versa} or any other combination of quantificational elements.
+We can thing of Player 0 as a random or given element of the model.
+Player 1, \textbf{the Speaker}, knows what the needed scope given by Nature is, and has to encode a linguistic message to communicate it to Player 2: \textbf{the Hearer} who is ignorant of it (illustrated in Figure \ref{tree}).
+
+If the Hearer's interpreted scope and the scope selected by Nature match, both human players get a payoff ($x$), while if they do not match, there has been a miscommunication and this there is no payoff.
+Similarly, we can formalize our assumptions in the previous section.
+If transformations, specifically passives, are costly or dispreferred in some way, we can model them as saying that they reduce the payoff to the speaker to some degree ($-y$).
+Similarly, instances of free word order and so-called ``scrambling'' do \emph{not} reduce any payoff.
+Lastly, surface scope should be universally preferred, so in a situations where a speaker and hearer settle on an \emph{inverse} scope reading of a sentence, their payoffs are reduced by some degree ($-w$).
+
+We should also assume that $x > (y + w)$, meaning that it is always preferable for the two interlocutors to understand each other even if transformations and inverse scope may dig into that payoff.
+Also, $y$ and $w$ are not necessarily larger or smaller than the other, and may vary from situation to situation, meaning that in some situations, it may be preferable for a speaker to vie for inverse scope rather than performing a transformation, while in others, it opposite may be true.
+
+The particulars of an instantiation of the game are based in the structure of whatever language is being spoken.
+For any given language, there will be a different set of syntactically valid utterances that the Speaker can use to signal to the Hearer what the intended scope is.
+Given the constraints posited above, we will assume that surface scope is the ideal, but different languages differ in their abilities to use different transformations or scrambling.
+
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[node distance=2cm]
+
+\node (nature) [box, align=center] {{\large \textbf{ Player 0: ``Nature''}}\\Determines desired quantifier scope interpretation $s$};
+\node (speaker) [box, align=center, below of=nature] {{\large \textbf{Player 1: ``Speaker''}}\\Determines a best wording $w$  to communicate $s$ };
+\node (hearer) [box, align=center, below of=speaker] {{\large \textbf{Player 2: ``Hearer''}}\\Must guess $s$  based $w$};
+
+\draw [arrow] (nature) -- (speaker) ;
+\draw [arrow] (speaker) -- (hearer) ;
+\end{tikzpicture}
+\end{center}
+\end{figure}
+\section{Data and Illustrating the Model}
+
+\subsection{Basic English Clauses and Passives\label{eng}}
+
+With the background established, we can move to address data and spelling out this model.
+First note some rudimentary scope facts in English.
+Generally, unmarked active ``kernel'' sentences like (\ref{evman}) and (\ref{evsp}) demonstrate fairly robust scope ambiguity.
+Thus, (\ref{evman}) can mean either that there is one particular girl that every man saw ($\exists>\forall$) or that each man saw a (potentially different) girl ($\forall>\exists$).
+
+\begin{exe}
+\ex\label{first}{\begin{xlist}
+\ex Every man saw a girl. \hfill ($\forall > \exists$; $\exists >  \forall$)\label{evman}
+\ex Everyone speaks two languages. \hfill ($\forall > 2$; $2 > \forall$)\label{evsp}
+\end{xlist}}
+\ex{\begin{xlist}
+\ex A girl was seen by every man. \hfill ($\exists > \forall$; *$\forall > \exists$)\label{agirl}
+\ex Two languages are spoken by everyone. \hfill ($2 > \forall$; *$\forall > 2$)\label{2lang}
+\end{xlist}}
+\end{exe}
+
+In the ``transformed'' passive equivalents of the two sentences, however, syntactic ambiguity becomes unavailable and surface scope is mandatory.
+Thus (\ref{agirl}) is only true if there was only one girl in question, while (\ref{2lang}) is only true if all of the people speak the same two particular languages.
+We see that this scopal alternation generally holds across most active/passive sentence pairs.\footnote{Some exceptions will be discussed later.}
+
+\begin{exe}
+\ex{\begin{xlist}
+\ex A man ate every watermelon. \hfill ($\exists>\forall$; $\forall>\exists$)
+\ex Every watermelon was eaten by a man. \hfill ($\forall>\exists$; *$\exists>\forall$)
+\end{xlist}}
+\ex{\begin{xlist}\label{love}
+\ex Everyone loves someone. \hfill ($\forall>\exists$; $\exists>\forall$)\label{sent}
+\ex Someone is loved by everyone. \hfill ($\exists>\forall$; *$\forall>\exists$)
+\end{xlist}}
+\end{exe}
+
+Again, given our constraints above, we can derive these facts from the interaction of strategic interpretation on the part of the two interlocutors. Assume the three player game above (of Nature, a Speaker and a Hearer), dealing with the kernel sentence in (\ref{sent}) ``Everyone loves someone,'' depicted in the decision tree in Figure \ref{tree}.
+
+First, the Nature player determines whether the intended scope of the utterance should be where the universal quantifier takes wide scope ($\forall>\exists$) or where the existential does ($\exists>\forall$). Then the Speaker takes his turn choosing either to word the sentence as the active ``Everyone loves someone'' or the passive ``Someone is loved by everyone.'' Lastly, the Hearer chooses whether to interpret the sentences with surface scope or inverse scope.
+
+If the Hearer guesses the correct scope as defined by Nature, both the Speaker and Hearer receive a payoff of $x$. If the players fail to engineer this, both will receive no payoff. Additionally, because a passive transformation is ``costly,'' the payoff of the Speaker will be deduced by $y$ whenever he chooses to produce a passive.
+
+\begin{figure}
+
+\begin{forest} 
+for tree={grow=east,draw=black,line width=0.2pt,parent anchor=east,child anchor=west,edge={draw=black},edge label={\Huge\color{black}},edge path={\noexpand\path[\forestoption{edge}](!u.parent anchor) -- ([xshift=-1.6cm].child anchor) --    
+      (.child anchor)\forestoption{edge label};
+  },
+  l sep=2cm,
+} 
+[Nature,rectangle, s sep=25pt,
+  [Speaker,edge label={node[Below]{$\exists>\forall$}}
+    [Hearer,edge label={node[Below]{Passive}}
+	[{$-y-w,-w$},edge label={node[Below]{Inverse}}]
+	[{$x-y,x$},edge label={node[Below]{Surface}}]
+	]
+    [Hearer,edge label={node[Above]{Active}}
+	[{$x-w,x-w$},edge label={node[Below]{Inverse}}]
+	[{$0,0$},edge label={node[Below]{Surface}}]
+	]
+  ]
+  [Speaker,edge label={node[Above]{$\forall>\exists$}}
+    [Hearer,edge label={node[Below]{Passive}}
+	[{$x-y-w,x-w$},edge label={node[Below]{Inverse}}]
+	[{$-y,0$},edge label={node[Below]{Surface}}]
+	]
+    [Hearer,edge label={node[Above]{Active}}
+	[{$-w,-w$},edge label={node[Below]{Inverse}}]
+	[{$x,x$},edge label={node[Below]{Surface}}]
+	]
+  ]
+]
+\end{forest}
+
+\caption{Decision Flow of the Game of ``Everybody loves somebody''\label{tree}}
+\end{figure}
+
+
+Since this decision tree involves tree players with substantive choices, it helps to narrow down the decision to find Nash Equilibria or optimal strategies. Let's put ourselves in the position of the Hearer. The Hearer is the one dealing with the informational asymmetry guessing the choice of Nature given the Speaker's utterance. Given the aforementioned decision tree in Figure \ref{tree}, the Hearer can make two hypotheses about Nature, that it chose to demand that the subject $\forall$ scope over the object $\exists$, which is represented in Figure \ref{all}, or that it demands that the object $\exists$ should scope over the subject $\forall$.
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+
+\matrix[matrix of math nodes,every odd row/.style={align=right},every even row/.style={align=left},every node/.style={text width=1.5cm},row sep=0.2cm,column sep=0.2cm] (m) {
+$x$&$-y$\\
+$x$&$0$\\
+$-w$&$x-y-w$\\
+$-w$&$x-w$\\
+};
+\draw (m.north east) rectangle (m.south west);
+\draw (m.north) -- (m.south);
+\draw (m.east) -- (m.west);
+
+\coordinate (a) at ($(m.north west)!0.25!(m.north east)$);
+\coordinate (b) at ($(m.north west)!0.75!(m.north east)$);
+\node[above=5pt of a,anchor=base] {Active};
+\node[above=5pt of b,anchor=base] {Passive};
+
+\coordinate (c) at ($(m.north west)!0.25!(m.south west)$);
+\coordinate (d) at ($(m.north west)!0.75!(m.south west)$);
+\node[left=2pt of c,text width=1cm]  {Surface};
+\node[left=2pt of d,text width=1cm]  {Inverse};
+
+\node[above=18pt of m.north] (firm b) {Speaker};
+\node[left=1.6cm of m.west,rotate=90,align=center,anchor=center] {Hearer};
+
+%\node[above=5pt of firm b]  {If Nature chooses $\forall>\exists$};
+\end{tikzpicture}
+\caption{If Nature selects $\forall>\exists$\label{all}}
+\end{figure}
+
+Given the first hypothesis represented in Figure \ref{all}, there is a clear dominant strategy for the Speaker and thus the Hearer, and thus a consistent Nash Equilibrium. If Nature chooses $\forall>\exists$, then choosing the \emph{Active} strategy dominates the \emph{Passive} strategy. This means that a Speaker knowledgeable of Nature's choice of $\forall>\exists$, he will never choose the \emph{Passive} strategy, (or any other hypothetical transformation that yields a deduction). This is  stated generally in (\ref{cost}).
+
+\begin{exe}
+\ex{\textbf{A speaker will not engage in a costly transformation which yields an undesired scope order.\label{cost}}}
+\end{exe}
+
+A look at the second hypothesis, that Nature has chosen $\exists>\forall$ will show that there is not equivalent dominant strategy there.
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+
+\matrix[matrix of math nodes,every odd row/.style={align=right},every even row/.style={align=left},every node/.style={text width=1.5cm},row sep=0.2cm,column sep=0.2cm] (m) {
+$0$&$x-y$\\
+$0$&$x$\\
+$x-w$&$-y-w$\\
+$x-w$&$-w$\\
+};
+\draw (m.north east) rectangle (m.south west);
+\draw (m.north) -- (m.south);
+\draw (m.east) -- (m.west);
+
+\coordinate (a) at ($(m.north west)!0.25!(m.north east)$);
+\coordinate (b) at ($(m.north west)!0.75!(m.north east)$);
+\node[above=5pt of a,anchor=base] {Active};
+\node[above=5pt of b,anchor=base] {Passive};
+
+\coordinate (c) at ($(m.north west)!0.25!(m.south west)$);
+\coordinate (d) at ($(m.north west)!0.75!(m.south west)$);
+\node[left=2pt of c,text width=1cm]  {Surface};
+\node[left=2pt of d,text width=1cm]  {Inverse};
+
+\node[above=18pt of m.north] (firm b) {Speaker};
+\node[left=1.6cm of m.west,rotate=90,align=center,anchor=center] {Hearer};
+
+%\node[above=5pt of firm b]  {If Nature chooses $\forall>\exists$};
+\end{tikzpicture}
+\caption{If Nature selects $\exists>\forall$\label{some}}
+\end{figure}
+
+
+Figure \ref{some} gives a Hearer no conclusion about the Speaker's dominant strategy, it is simply a kind of \emph{Battle of the Sexes} with the additional cost of the passive transformation.\footnote{There is the clear \emph{focal point} of the Speaker using an \emph{Active} and the Hearer interpreting inverse scope, but this is illusory given the random element of Nature and the wider tree in Figure \ref{tree}.} However, since we cannot \emph{rule out} the use of the passive, and we have already established (\ref{cost}), we can also logically conclude (\ref{pass}).
+
+
+\begin{exe}
+\ex{\textbf{The use of a costly transformation, \emph{ceteris paribus}, entails that the underlying object should take wide scope over the subject. Or put another way, scopal ambiguity dissappears in favor of surface scope after a costly transformation.\label{pass}}}
+\end{exe}
+
+
+
+\subsection{Scrambling\label{scramb}}
+
+But how should scope ambiguities work where there are ``costless'' ways of reordering quantified nominals? Scrambling languages present ways of reordering nominals without a marked transformation. In our model, Speakers in languages like this, such as German, Persian, Korean and Japanese, have access to another strategy aside from producing an active or passive clause. They may also \emph{scramble} the object such that it appears to the left of the subject.
+
+\subsubsection{Scope in Scrambling Languages}
+
+First the empirical facts. German, a scrambling language shows a very different paradigm of scope availabilities than does English. Even in ``kernel'' sentences like (\ref{g}), surface scope is the only plausible interpretation. The same is true in the scrambled sentence (\ref{gs}), where the object has been scrambled left of the subject.
+
+\begin{exe}
+\ex{\gll dass eine Frau jeden liebt\\
+that a woman everybody loves\\
+\trans{``\ldots that everyone loves a woman\label{g}''\hfill (some $>$ every; ??every $>$ some)}}
+\ex{\gll dass jeden eine Frau liebt\\
+that everybody a woman loves\\
+\trans{``\ldots that everyone loves a woman\label{gs}'' \hfill (every $>$ some; ??some $>$ every)}}
+\end{exe}
+
+This universal surface scope is well mirrored in other languages. \textcite{karimi03} notes that one of the principle differences between scrambling languages and ones with inflexible word order like English is the lack of ambiguity. We can see similar patterns in Persian in (\ref{pers}).
+
+\begin{exe}
+\ex\label{pers} \begin{xlist}
+\ex {\gll Yek d\=aneshju hame ket\=ab-i x\=and. \\
+a student all book-IND read \\
+\trans{``A student read every book.''\hfill ($\exists > \forall$; *$\forall > \exists$)}}
+\ex {\gll Hame ket\=ab-i yek d\=aneshju x\=and. \\
+all book-IND a student read \\
+\trans{``A student read every book.''\hfill ($\forall > \exists$; *$\exists > \forall$)}}
+\end{xlist}\end{exe}
+
+
+\subsubsection{An Account of Scramblible Scope}
+
+The \emph{Scramble} strategy, which consists of moving the object left of the subject, achieves the linear order of passivization without the cost of $y$ to the Speaker. Because of this, \emph{Scramble} in a scrambling language is always preferable to the dominated strategy \emph{Passive} for the Speaker.
+
+\begin{figure}
+
+\begin{forest} 
+for tree={grow=east,draw=black,line width=0.2pt,parent anchor=east,child anchor=west,edge={draw=black},edge label={\Huge\color{black}},edge path={\noexpand\path[\forestoption{edge}](!u.parent anchor) -- ([xshift=-1.6cm].child anchor) --    
+      (.child anchor)\forestoption{edge label};
+  },
+  l sep=2cm,
+} 
+[Nature,rectangle, s sep=25pt,
+  [Speaker,edge label={node[Below]{$\exists>\forall$}}
+    [Hearer,edge label={node[Below]{Passive}}
+	[{$-y-w,-w$},edge label={node[Below]{Inverse}}]
+	[{$x-y,x$},edge label={node[Below]{Surface}}]
+	]
+    [Hearer,edge label={node[Above]{Active}}
+	[{$x-w,x-w$},edge label={node[Below]{Inverse}}]
+	[{$0,0$},edge label={node[Below]{Surface}}]
+	]
+[Hearer, edge label={node[Above]{Scramble}}
+[{$-w,-w$}, edge label={node[Below]{Inverse}}]
+[{$x,x$}, edge label={node[Below]{Surface}}]
+]
+  ]
+  [Speaker,edge label={node[Above]{$\forall>\exists$}}
+    [Hearer,edge label={node[Below]{Passive}}
+	[{$x-y-w,x-w$},edge label={node[Below]{Inverse}}]
+	[{$-y,0$},edge label={node[Below]{Surface}}]
+	]
+    [Hearer,edge label={node[Above]{Active}}
+	[{$-w,-w$},edge label={node[Below]{Inverse}}]
+	[{$x,x$},edge label={node[Below]{Surface}}]
+	]
+[Hearer, edge label={node[Above]{Scramble}}
+[{$x-w$}, edge label={node[Below]{Inverse}}]
+[{$0,0$}, edge label={node[Below]{Surface}}]
+]
+  ]
+]
+\end{forest}
+
+\caption{Decision Flow of the Game of ``Everybody loves somebody'' in a Scrambling Language\label{trees}}
+\end{figure}
+
+Thus if we disregard the possibility of passivization as dispreferred as a scope technique, once again, both human players have two possible choices.
+Once again, we can again simplify the decision tree into two two-dimensional grids given the two different possible choices of the Nature player.
+We should see that there is no straight-forward dominant strategy for either player, but a very obvious signalling opportunity arises in the meta-game.
+
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+
+\matrix[matrix of math nodes,every odd row/.style={align=right},every even row/.style={align=left},every node/.style={text width=1.5cm},row sep=0.2cm,column sep=0.2cm] (m) {
+$x$&$0$\\
+$x$&$0$\\
+$-w$&$x-w$\\
+$-w$&$x-w$\\
+};
+\draw (m.north east) rectangle (m.south west);
+\draw (m.north) -- (m.south);
+\draw (m.east) -- (m.west);
+
+\coordinate (a) at ($(m.north west)!0.25!(m.north east)$);
+\coordinate (b) at ($(m.north west)!0.75!(m.north east)$);
+\node[above=5pt of a,anchor=base] {Active};
+\node[above=5pt of b,anchor=base] {Scramble};
+
+\coordinate (c) at ($(m.north west)!0.25!(m.south west)$);
+\coordinate (d) at ($(m.north west)!0.75!(m.south west)$);
+\node[left=2pt of c,text width=1cm]  {Surface};
+\node[left=2pt of d,text width=1cm]  {Inverse};
+
+\node[above=18pt of m.north] (firm b) {Speaker};
+\node[left=1.6cm of m.west,rotate=90,align=center,anchor=center] {Hearer};
+
+%\node[above=5pt of firm b]  {If Nature chooses $\forall>\exists$ in a scrambling langugae};
+\end{tikzpicture}
+\caption{If Nature selects $\forall>\exists$ in a scrambling language\label{2s1}}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+
+\matrix[matrix of math nodes,every odd row/.style={align=right},every even row/.style={align=left},every node/.style={text width=1.5cm},row sep=0.2cm,column sep=0.2cm] (m) {
+$0$&$x$\\
+$0$&$x$\\
+$x-w$&$-w$\\
+$x-w$&$-w$\\
+};
+\draw (m.north east) rectangle (m.south west);
+\draw (m.north) -- (m.south);
+\draw (m.east) -- (m.west);
+
+\coordinate (a) at ($(m.north west)!0.25!(m.north east)$);
+\coordinate (b) at ($(m.north west)!0.75!(m.north east)$);
+\node[above=5pt of a,anchor=base] {Active};
+\node[above=5pt of b,anchor=base] {Scramble};
+
+\coordinate (c) at ($(m.north west)!0.25!(m.south west)$);
+\coordinate (d) at ($(m.north west)!0.75!(m.south west)$);
+\node[left=2pt of c,text width=1cm]  {Surface};
+\node[left=2pt of d,text width=1cm]  {Inverse};
+
+\node[above=18pt of m.north] (firm b) {Speaker};
+\node[left=1.6cm of m.west,rotate=90,align=center,anchor=center] {Hearer};
+
+%\node[above=5pt of firm b]  {If Nature chooses $\forall>\exists$};
+\end{tikzpicture}
+\caption{If Nature selects $\exists>\forall$ in a scrambling language\label{2s2}}
+\end{figure}
+
+Specifically, independent of the Speaker and Nature's choices, the Hearer will want to avoid choosing the \emph{Inverse} strategy. The Speaker realizes this and can strategically select his strategy based on what will require the Hearer to \emph{not} select the \emph{Inverse} strategy. This acts as a signal to the Hearer.
+
+In the meta-game, the Speaker acts so that both players can be applicable for the highest possible payoff of $x$. And a Hearer totally blind to the Speaker's actions should have a bias to the \emph{Surface} scope interpretation strategy.
+
+If the Hearer or Speaker violate this meta-strategy, they would be subject to a descrease in expected returns over time, independent of the other players actions. Therefore in a language with the free movement of nominals, we should predict that Hearers should \emph{only} try to interpret sentences in surface order in normal situations, and that speakers should scramble or not depending on which produces a sentence which gives the correct scope interpretations with a surface scope reading.
+
+
+\subsection{The Generalization}
+
+
+We can sum up the generalization of this Game Theoretic analysis of both English-like and scrambling languages below in (\ref{gen}).
+
+\begin{exe}
+\ex \textbf{Wherever there is free and costless word order, scope ambiguities need not arise, but where word order is inflexible, scope ambiguities occur.
+\label{gen}}
+\end{exe}
+
+This generalization simply falls out from the analysis we have outlined, and we can widen the scope and look at other kids of scope ambiguities to see similar effects.
+
+Before that, just a restatement of the intuitions in intuitive terms. Hearers assume that sentences with free word-order are always surface scope because, due to the free word-order, the speaker could've put the words in another ideal surface scope reading if such reading had been intended. On the other hand, in English-like languages, costly transformations are unambiguous because hearers assume that speakers would not have engaged in costly transformations unless they intended the sentence to be in a special surface scope order. \emph{But} ambiguity arises in English-like languages when a sentence like ``Everyone loves someone'' is produced. This is because hearers can say, ``Ah, that may just be the desired reading in surface scope, \emph{or} perhaps it is a suboptimal order, and the speaker didn't want to undergo a costly transformation.''
+
+
+\subsection{More Examples}
+
+\subsubsection{Flexibility of Negation}
+
+We can take the generalization in (\ref{gen}) and compare it to the flexibility or rigidity of non-nominal quantificational elements as well.
+
+English expresses sentential negation in the element \emph{not}. As a descriptive generalization, \emph{not} may occur only after a modal or another auxiliary. In normal discoursive situations, it may not occur after main verbs or before a modal. Many attempts have been made to describe and justify the specifics of these facts. We will not address them here, but assume the empirical facts as given syntactic constraints and proceed.
+
+On to the scopal facts. Notice first that an English sentence with one modal and one negation produce ambiguity.
+
+\begin{exe}
+\ex Billy can not go. \label{cannot}\hfill ($\neg >$ can; can $> \neg$) 
+\end{exe}
+
+(\ref{cannot}) is ambiguous. Negation can take wide scope (which is inverse) such that Billy is \emph{unable} to go, or the modal can take wide (surface) scope, where Billy is able \emph{not} to go, if he so pleases.
+
+In keeping with our assumptions, we can say that ambiguity arises because the following order in (\ref{badneg}) is syntactically invalid for other reasons in English.
+
+\begin{exe}
+\ex[*]{Billy not can go.\label{badneg}}
+\end{exe}
+
+Since (\ref{badneg}) is syntactically ill-formed, we cannot, by normal syntactic means force negation to linearly scope over the modal, thus its parallel sentence (\ref{cannot}) can be assumed to be a suboptimal enunciation of the meaning of an intended (\ref{badneg}). If we imagine a hypothetical ``negation scrambling'' language where the equivalent of (\ref{badneg}) is available, (\ref{cannot}) should be unambiguously $can > \neg$.
+
+Now that is the situation of modal and negation scope with one non-main verb. However as inferred previously, where there are multiple auxiliaries, \emph{not} may freely occur after any one. Syntactic flexibility should reduce or eliminate the possibility of ambiguity. This is the case as below.
+
+\begin{exe}
+\ex Billy could not have gone before we arrived.\label{could not}
+\ex Billy could have not gone before we arrived.\label{have not}
+\end{exe}
+
+Notice as there is flexibility of negation position with non-modal auxiliaries in English, neither (\ref{could not}) nor (\ref{have not}) are ambiguous. In (\ref{could not}), we express the fact that Billy was unable to go before our arrival. In (\ref{have not}), we express the possibility Billy was able to \emph{not} go, but in a world where Billy did go, (\ref{have not}) may still be true.
+
+Thus even in a single language our generalization holds. Syntactic rigidity allows for ambiguity, while free flexibility creates situations where ambiguity is ruled out due to the assumption that speakers have that surface scope is universally preferred.
+
+And as expected, languages that can syntactically bear negation before modals, such as Chinese do not create the ambiguity in the rigid English example \parencite{ernst98}.
+
+\begin{exe}
+\ex{\gll Shujuan keyi bu gen Guorong {tiao wu}.\\
+S. may not with G. dance\\
+\trans{``Shujuan may not dance with Guorong.''} \hfill (may $>$ not; *not $>$ may) }
+\ex{\gll Shujuan bu keyi gen Guorong {tiao wu}.\\
+S. not may with Guorong dance\\
+\trans{``Shujuan may not dance with Guorong.''} \hfill (not $>$ may; *may $>$ not)}
+\end{exe}
+
+The Persian situation is particularly interesting. In most situations, while noun scrambling is mostly free, scrambling of the verb and its negation is more marked. This manifests in that inverse scope is very possible in positions involving a negation interfacing with another quantifier.
+
+\begin{exe}
+\ex {\gll Yek d\=aneshju \=an ket\=ab-r\=a na-x\=and. \\
+one student that book-ACC not-read \\
+\trans{``A student didn't read that book.\label{par}''}}
+\end{exe}
+
+As we would predict, (\ref{par}) is ambiguous. It can mean either a certain student didn't read the book ($\exists > \neg$) or that \emph{not one} student read it ($\neg > \exists$). This ambiguity arises because the movement of the verb is more marked.
+
+In other situations, particularly in movement verbs, the Persian main verb becomes more flexible. SVO order, where the negation is still a pre-verbal clitic, is common with some movement verbs, and as expected, the ambiguity evaporates in (\ref{pm1}) and (\ref{pm2}).
+
+\begin{exe}
+\ex{\gll Billy na-raft hame shahr-i.\\
+B. not-went all city-IND\\
+\trans{``Billy didn't go to every city.'' \hfill ($\neg > \forall$; *$\forall > \neg$)\label{pm1}}
+}
+\ex{\gll Billy be hame shahr-i na-raft.\\
+B. to all city-IND not-went.\\
+\trans{``Billy didn't go to any city.'' \hfill ($\forall > \neg$; *$\neg > \forall$)\label{pm2}}
+}
+\end{exe}
+
+
+\subsubsection{Local Rigidity}
+
+Since my statement here is that scope ambiguity is merely the result of linear rigidity in syntax, not of some language-wide parameter, we should see the unambiguous surface scope of scrambling languages disappear in particular constructions where normally scramblible nominals are tied in position.
+
+Chinese, usually a very stablely scrambling or discourse configurational language generally allows the low cost movement of nominals as illustrated in (\ref{chin}) (from \textcite{aoun93}). These sentences, as we should expect are unambiguous and force surface scope. In (\ref{chin1}), everyone arrests different women, while in (\ref{chin2}), only one woman, who apparently is a prolific criminal, is arrested.
+
+\begin{exe}
+\ex \begin{xlist}\label{chin}
+\ex[]{\gll Meigeren dou zhuazou yige {n\"uren}.\\
+everyone all arrest a woman\\
+\trans{``Everyone arrested a woman.''\label{chin1}}
+}
+\ex[]{\gll (You) yige {n\"uren} meigeren dou zhuazou.\\
+(have) a woman everyone all arrest.\\
+\trans{``A woman was arrested by everyone.''\label{chin2}}
+}\end{xlist}
+\end{exe}
+
+However Chinese \emph{bei} pseudo-passives require a particular word order. The semantic object is promoted as the initial nominal, while the agent follows the preverbal co-verb ``bei'' as shown in (\ref{chin3}). As (\ref{chin4}) shows, however, the quasi-prepositional \emph{bei} $+$ \emph{agent} constituent may not be fronted or topicalized.
+
+\begin{exe}
+\ex{ \begin{xlist}
+\ex[]{\gll Meigeren dou bei yige {n\"uren} zhuazou.\\
+everyone all PASS a woman arrest\\
+\trans{``Everyone was arrested by a woman.''\label{chin3}}
+}
+\ex[*]{Bei yige {n\"uren} meigeren dou zhuazou.\\
+PASS a woman everyone all arrest\\
+\label{chin4}
+}\end{xlist}}
+\end{exe}
+
+The scopal possibilities follow the predictions perfectly. Since flexible word order is unavailable, (\ref{chin3}) is ambiguous: there can either be one woman arresting everyone, or each person can be arrested by a different woman.
+
+Interestingly enough, the scope possibilities in Chinese in normal clauses and the \emph{bei} pseudo-passive are precisely the opposite of English, again this falls out from the fact that nominal movement is generally free in Chinese (meaning unambiguous sentences normally) and the additional fact that \emph{bei} passives are not precisely equivalent to their active counterparts, but add additional meaning.\footnote{\emph{Bei} passives imply some kind of misfortune or negativity. Thus (\ref{chin3}) could be translated as ``Everyone befell arresting by a woman'' or something of the sort.}
+
+On a philological note, it might be that languages with free word-order like Chinese probably use transformations less than rigid word-order languages like English specifically because they are unnecessary for scope. Those transformations they do use, like \emph{bei} passives, may tend to have extra semantic value lest they be ``worthless.''
+
+
+\section{Theoretical Issues Solved and Opened}
+
+\subsection{The Gambit of Linear Order}
+
+It should be noted that the data of scope present an existential problem for the general interpretation of syntax from a ``logical form'' perspective. On one hand, the assumption has been that scope interpretations are read from quantificational elements which interface with the hierarchical structure of language. This structure (from the Chomskyan perspective) is construed as irrelevant to the linear order of a sentence, which is a later realization of the expression in phonological form.
+
+But the overwhelming reality of scope as a feature of natural language is that it is manifestly and abundantly tied to linear order, nearly all of the data presented here, along with that in the literature testify to this.
+
+I think a proper understand of scope would be that \emph{all possible scope readings of all sentences are theoretically possible at all times}. In normal discoursive situations, however, most possible readings as pruned out as implausible, based on pragmatic circumstances or world-knowledge. This also would attest well the conundrum of every syntax class, where graduate students sit around long enough looking at sentences without context and start seeing \emph{all} of the scopal readings after long enough. My analysis here has endeavored to show why some readings are \emph{ruled out} in certain situations, although this is no be-all-end-all solution to scope, precisely because it is a pragmatic, and perhaps extralinguistic portion of language.
+
+Such a framework would be able to maintain the statement that human language, at its syntactic core, should be independent of linear order, as the linear order effects are part of the pragmatic traits of language use and discourse.
+
+\subsection{Scope Interpretations are Not Licensed, but \emph{Pruned}}
+
+Again, I have not crafted a universal account of scope ambiguities, and have deliberately avoid some contradictory examples that I think explicable on other grounds. Take the sentence pair below.
+
+\begin{exe}
+\ex Every boy ate an apple.\label{evboy}
+\ex An apple was eaten by every boy.\label{anap}
+\end{exe}
+
+(\ref{evboy}) follows the generalizations we've sketched here in, that it is ambiguous ($\forall>\exists$, $\exists>\forall$). (\ref{anap}), as a passive, is unambiguous, but not in the way we've predicted here, but \emph{only} inverse scope is allowed ($\forall>\exists$, *$\exists>\forall$), or at least, inverse scope is highly preferred.
+
+
+What rules out the surface scope interpretation of (\ref{anap}) is not the pragmatics of passivization \emph{per se}, but the interface of general world knowledge with the inherent telicity of the verb \emph{eat} with a count noun object. The predicate ``ate an apple'' implies that the subject totally consumed an apple, but if the universal quantifier is thought to scope over the existential ``an apple,'' this would have to mean that every boy totally ate the same apple as every other boy, which is logically impossible.
+
+This makes the otherwise disfavored $\forall>\exists$ interpretation the only logically consistent option. If we rejigger the sentence to remove the telicity, as in (\ref{jig}), we see that the expected scope possibilities return, even when the sentence is still somewhat strange by that interpretation.
+
+\begin{exe}
+\ex Some of an apple was eaten by every boy. \hfill ($\exists>\forall$, $\forall>\exists$)\label{jig}
+\end{exe}
+
+Note \emph{also} that if we imagine (\ref{anap}) in a discourse environment, we're most likely to think of constrastive focus or something else: ``An apple was eaten by every boy, a banana by every woman, a pineapple by every man\ldots'' 
+
+I do \emph{not} consider this a contradiction, but evidence in favor of the wider point. Scope ambiguities are trimmed away by pragmatic factors. In (\ref{anap}), it is world knowledge, in most of the other examples here, it's economy of derivation.
+
+\section{Closing}
+
+In closing, much of the confusion about scope can be alleviated by understanding that scope availabilities are determined by pragmatic factors and implicatures that can be modelled Game Theoretically. We've seen here that the facts about the scope availabilities of most languages fall out quite effortlessly from assumptions about the cost of transformations, the costlessness of scrambling and the wider syntactic capacities of a language.
+
+I feel that much more work can be note to resolve questions in scope using pragmatic facts, particularly in the areas of telicity and world knowledge. Regardless, there seems to be decent circumstantial evidence to lend credence to the idea that scope is not a component of narrow syntax, but a set of extra-UG implicatures we make about language use.
+
+Additionally, other factors of grammar, such as binding in the classical sense are in need of new life, once insurmountable problems were brought to traditional syntactic analyses of the data. It may be that these other factors, binding, negative polarity items and cross-over effects may actually be derivable on pragmatic grounds, and thus would eliminate such of the theoretical mess and greatly economize and minimize the core language faculty.
+
+
+\printbibliography
+
+\end{document}
