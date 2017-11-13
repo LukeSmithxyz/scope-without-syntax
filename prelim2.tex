@@ -131,7 +131,23 @@ If the speaker intends for a universal quantifier, such as \emph{every}, to scop
 	\textbf{Information asymmetry} -- One player knows something the other doesn't. In our model, the Speaker is aware of the require scope interpretation, but the Hearer is not.
 \end{framed}
 
-To be more specific, we can say this is a kind of 3-player coordination game.
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[node distance=2cm]
+
+\node (nature) [box, align=center] {{\large \textbf{ Player 0: ``Nature''}}\\Determines desired quantifier scope interpretation $s$};
+\node (speaker) [box, align=center, below of=nature] {{\large \textbf{Player 1: ``Speaker''}}\\Determines a best wording $w$  to communicate $s$ };
+\node (hearer) [box, align=center, below of=speaker] {{\large \textbf{Player 2: ``Hearer''}}\\Must guess $s$  based $w$};
+
+\draw [arrow] (nature) -- (speaker) ;
+\draw [arrow] (speaker) -- (hearer) ;
+\end{tikzpicture}
+\end{center}
+	\caption{The sequence of player choices\label{seq}}
+\end{figure}
+
+To be more specific, we can say this is a kind of 3-player coordination game (where the sequence is indicated in Figure \ref{seq}).
 Player 0, who we can term \textbf{Nature} dictates what the needed scope interpretation should be, that is, whether, based on circumstances, a universal quantifier must scope over an existential quantifier, or \emph{vice versa} or any other combination of quantificational elements.
 We can think of Player 0 as a random or given element of the model.
 Player 1, \textbf{the Speaker}, knows what the needed scope given by Nature is, and has to encode a linguistic message to communicate it to Player 2: \textbf{the Hearer} who is ignorant of it (illustrated in Figure \ref{tree}).
@@ -150,19 +166,6 @@ For any given language, there will be a different set of syntactically valid utt
 Given the constraints posited above, we will assume that surface scope is the ideal, but different languages differ in their abilities to use different transformations or scrambling.
 
 
-\begin{figure}
-\begin{center}
-\begin{tikzpicture}[node distance=2cm]
-
-\node (nature) [box, align=center] {{\large \textbf{ Player 0: ``Nature''}}\\Determines desired quantifier scope interpretation $s$};
-\node (speaker) [box, align=center, below of=nature] {{\large \textbf{Player 1: ``Speaker''}}\\Determines a best wording $w$  to communicate $s$ };
-\node (hearer) [box, align=center, below of=speaker] {{\large \textbf{Player 2: ``Hearer''}}\\Must guess $s$  based $w$};
-
-\draw [arrow] (nature) -- (speaker) ;
-\draw [arrow] (speaker) -- (hearer) ;
-\end{tikzpicture}
-\end{center}
-\end{figure}
 \section{Data and Illustrating the Model}
 
 \subsection{Basic English Clauses and Passives\label{eng}}
@@ -201,9 +204,13 @@ We see that this scopal alternation generally holds across most active/passive s
 It should be said that while (\ref{passman}) and (\ref{passsome}) are labeled as requiring surface scope, there are indeed situations where the inverse readings are possible or required.
 While when some traditional accounts of scope categorically rule these sentences out, for me, what is important is that the inverse passive readings are simply \emph{highly dispreferred}.
 As our analysis will show, there is nothing formally syntactic that makes these sentences essentially bad, but merely the results of the Game Theoretic analysis.
+The important fact here is merely that English passives, without other context strongly imply only surface scope.
+
+\subsection{The Game Theoretic Core}
 
 Regardless, given our constraints above, we can derive these facts of the difference between actives and passives from the interaction of strategic interpretation on the part of the two interlocutors.
 Assume the three player game above (of Nature, a Speaker and a Hearer), dealing with the kernel sentence in (\ref{sent}) ``Everyone loves someone,'' depicted in the decision tree in Figure \ref{tree}.
+
 
 First, the Nature player determines whether the intended scope of the utterance should be where the universal quantifier takes wide scope ($\forall>\exists$) or where the existential does ($\exists>\forall$).
 Then the Speaker takes his turn choosing either to word the sentence as the active ``Everyone loves someone'' or the passive ``Someone is loved by everyone''.
@@ -287,13 +294,23 @@ $-i$&$c-i$\\
 \caption{If Nature selects $\forall>\exists$\label{all}}
 \end{figure}
 
-Given the first hypothesis represented in Figure \ref{all}, there is a clear dominant strategy for the Speaker and thus the Hearer, and thus a consistent Nash Equilibrium. If Nature chooses $\forall>\exists$, then choosing the \emph{Active} strategy dominates the \emph{Passive} strategy. This means that a Speaker knowledgeable of Nature's choice of $\forall>\exists$, he will never choose the \emph{Passive} strategy, (or any other hypothetical transformation that yields a deduction). This is  stated generally in (\ref{cost}).
+The key to the strategy is the cost of the passive $p$.
+Let's take the situation when Nature selects ${\forall}>{\exists}$.
+In that case, the hypothetical active form ``Everybody loves someone'' already has the correct surface scope order.
+While it is not immediately sure that the Hearer would determine that this active clause is indeed the required order, it costs the Speaker neither decrements of $p$ or $i$.
+
+If the Speaker were to passivize the sentence to ``Someone is loved by everybody'', not only would he be incurring the loss of $p$ for the passive transformation, but if the Hearer did guess correctly that the sentences should have \emph{inverse} scope in this reading, both players would additionally be losing $i$.
+
+The Speaker therefore is in a position of two theoretically uncertain outcomes, one that can yield him $c$, while the other can yield him only $c-p-i$.
+All things considered, $c$ is preferrable, and therefore using the active sentence to express ${\forall}>{\exists}$ should be preferrable.
+While this is not a proper Nash Equilibrium, since we are dealing with a non-simultaenous game, this decision can act as a \emph{signal} to the second player, the Hearer.
+
+The Hearer, knowing that there is this Schelling Point for choosing the active sentence when given ${\forall}>{\exists}$ can therefore conclude by deduction that if the Speaker for some reason chooses to word his sentence in the passive, it is nearly certain that Nature meant \emph{the other} alternative: ${\exists}>{\forall}$.
+Or put more generally in (\ref{cost}).
 
 \begin{exe}
-\ex{\textbf{A speaker will not engage in a costly transformation which yields an undesired scope order.\label{cost}}}
+\ex{\textit{A speaker will not engage in a costly transformation which yields an undesired scope order.\label{cost}}}
 \end{exe}
-
-A look at the second hypothesis, that Nature has chosen $\exists>\forall$ will show that there is not equivalent dominant strategy there.
 
 \begin{figure}
 \centering
@@ -328,14 +345,22 @@ $c-i$&$-i$\\
 \end{figure}
 
 
-Figure \ref{some} gives a Hearer no conclusion about the Speaker's dominant strategy, it is simply a kind of \emph{Matching Pennies} game with the additional cost of the passive transformation.\footnote{There is the clear \emph{focal point} of the Speaker using an \emph{Active} and the Hearer interpreting inverse scope, but this is illusory given the random element of Nature and the wider tree in Figure \ref{tree}.} However, since we cannot \emph{rule out} the use of the passive, and we have already established (\ref{cost}), we can also logically conclude (\ref{pass}).
+%Figure \ref{some} gives a Hearer no conclusion about the Speaker's dominant strategy, it is simply a kind of \emph{Matching Pennies} game with the additional cost of the passive transformation.\footnote{There is the clear \emph{focal point} of the Speaker using an \emph{Active} and the Hearer interpreting inverse scope, but this is illusory given the random element of Nature and the wider tree in Figure \ref{tree}.} However, since we cannot \emph{rule out} the use of the passive, and we have already established (\ref{cost}), we can also logically conclude (\ref{pass}).
+Or to spell (\ref{cost}) out more specifically in our context, see (\ref{passa}).
 
 
 \begin{exe}
-\ex{\textbf{The use of a costly transformation, \emph{ceteris paribus}, entails that the underlying object should take wide scope over the subject. Or put another way, scopal ambiguity dissappears in favor of surface scope after a costly transformation.\label{pass}}}
+\ex{\textit{The use of a costly reordering transformation, \emph{ceteris paribus}, entails that the underlying object should take wide scope over the subject. Or put another way, scopal ambiguity dissappears in favor of surface scope after a costly transformation.\label{passa}}}
 \end{exe}
 
+To put it in more intuitive terms, if the subject does something costly like passivization to a sentence, \emph{he is doing it for a reason}, specifically here to avoid the other loss of $i$.
+Passivizing only to also lose $i$ is not a good Schelling Point strategy.
+For this reason, in most pragmatic circumstances, passivized sentences appear as unambiguous, seeing that we conclude that they are motivated to avoid the cost of the inverse scope.
 
+In the situation where Nature chooses ${\exists}>{\forall}$, the situation is less clear.
+This is because the Speaker has two possible winning payoffs: $c-i$ and $c-p$, neither of which is necessarily preferrable since we have not established whether $p>i$, nor do I think one is always larger than the other.
+In this situation, a Speaker could passivize and to avoid inverse scope order, or bite the bullet and take inverse scope without the passivization, both with uncertainty.
+The end result is that the active sentence ``Everyone loves someone'' does not clearly communicate whether Nature choose ${\forall}>{\exists}$ or ${\exists}>{\forall}$ since there is no obvious Schelling Point to rule out one of the strategies. Therfore, while the English passive is unambiguous due to the presence of a Schelling Point, the English passive is not.
 
 \subsection{Scrambling\label{scramb}}
 
