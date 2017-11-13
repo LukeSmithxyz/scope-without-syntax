@@ -13,6 +13,7 @@
 \usepackage{qtree}
 \usepackage{enumerate}
 \usepackage{longtable}
+\usepackage{dialogue}
 \usepackage{textgreek}
 \addbibresource{$HOME/Documents/LaTeX/uni.bib}
 
@@ -38,9 +39,35 @@
 
 \begin{abstract}
 	Here I argue that the commonly (and uncommonly) known facts about the availability of quantifier scope interpretations fall out cleanly from communicative constraints which Speakers and Hearers tactically navigate to converge on the intended meaning of an utterance.
-I model this Game Theoretically, as a kind of cooperation game between the Speaker and Hearer: both benefit from 
+	This allows a relatively complete and motivated of quantifier scope ambiguity wholly without the need to resort to syntactic structure \textit{per se} for the main data.
+	I model this theory Game Theoretically, in a game where speakers receive a payoff for successful communication, and decrements to payoffs for the use of marked constructions.
+	These assumptions are sufficient to account for classical scope ambiguity data, but also newly compiled data I present which argues that \emph{word order rigidity}, across languages and constructions is the cause of scope ambiguity.
 \end{abstract}
 
+%\section{Problems with syntactically-derived accounts of scope}
+
+%\begin{exe}
+	%\ex
+	%\begin{xlist}
+	%\ex Many of the arrows didn't hit the target.
+	%\ex The target wasn't hit by many of the arrows.
+	%\end{xlist}
+%\end{exe}
+
+%\begin{exe}
+	%\ex 
+%\begin{dialogue}
+	%\speak{Speaker 1} Look at the target: it wasn't hit by your arrow!
+	%\speak{Speaker 2} The target wasn't hit by many of the arrows.
+%\end{dialogue}
+%\end{exe}
+
+\section{Background and Motivation}
+
+The quite interesting experimental research begun by \textcite{han07} on Korean verbal head movement shows a prime example.
+The original study argued that systematically different scope judgments among two groups of Korean speakers
+
+We wouldn't be losing much if we aba
 
 \section{Assumptions}
 
@@ -55,6 +82,7 @@ We will see, however, that much of the diversity of scope can be accounted for m
 \item ``Scrambling'' in languages which exhibit it, is not similarly costly.
 \end{enumerate}
 
+
 \section{Model}
 
 Additionally, it's important to be clear about the Game Theoretics of communication.
@@ -64,17 +92,17 @@ If the speaker intends for a universal quantifier, such as \emph{every}, to scop
 
 To be more specific, we can say this is a kind of 3-player coordination game.
 Player 0, who we can term \textbf{Nature} dictates what the needed scope interpretation should be, that is, whether, based on circumstances, a universal quantifier must scope over an existential quantifier, or \emph{vice versa} or any other combination of quantificational elements.
-We can thing of Player 0 as a random or given element of the model.
+We can think of Player 0 as a random or given element of the model.
 Player 1, \textbf{the Speaker}, knows what the needed scope given by Nature is, and has to encode a linguistic message to communicate it to Player 2: \textbf{the Hearer} who is ignorant of it (illustrated in Figure \ref{tree}).
 
 If the Hearer's interpreted scope and the scope selected by Nature match, both human players get a payoff ($x$), while if they do not match, there has been a miscommunication and this there is no payoff.
 Similarly, we can formalize our assumptions in the previous section.
 If transformations, specifically passives, are costly or dispreferred in some way, we can model them as saying that they reduce the payoff to the speaker to some degree ($-y$).
 Similarly, instances of free word order and so-called ``scrambling'' do \emph{not} reduce any payoff.
-Lastly, surface scope should be universally preferred, so in a situations where a speaker and hearer settle on an \emph{inverse} scope reading of a sentence, their payoffs are reduced by some degree ($-w$).
+Lastly, surface scope should be universally preferred, so in situations where a speaker and hearer settle on an \emph{inverse} scope reading of a sentence, their payoffs are reduced by some degree ($-w$).
 
 We should also assume that $x > (y + w)$, meaning that it is always preferable for the two interlocutors to understand each other even if transformations and inverse scope may dig into that payoff.
-Also, $y$ and $w$ are not necessarily larger or smaller than the other, and may vary from situation to situation, meaning that in some situations, it may be preferable for a speaker to vie for inverse scope rather than performing a transformation, while in others, it opposite may be true.
+Also, $y$ and $w$ are not necessarily larger or smaller than one another, and may vary from situation to situation, meaning that in some situations, it may be preferable for a speaker to vie for inverse scope rather than performing a transformation, while in others, it opposite may be true.
 
 The particulars of an instantiation of the game are based in the structure of whatever language is being spoken.
 For any given language, there will be a different set of syntactically valid utterances that the Speaker can use to signal to the Hearer what the intended scope is.
@@ -133,7 +161,7 @@ Again, given our constraints above, we can derive these facts from the interacti
 
 First, the Nature player determines whether the intended scope of the utterance should be where the universal quantifier takes wide scope ($\forall>\exists$) or where the existential does ($\exists>\forall$). Then the Speaker takes his turn choosing either to word the sentence as the active ``Everyone loves someone'' or the passive ``Someone is loved by everyone.'' Lastly, the Hearer chooses whether to interpret the sentences with surface scope or inverse scope.
 
-If the Hearer guesses the correct scope as defined by Nature, both the Speaker and Hearer receive a payoff of $x$. If the players fail to engineer this, both will receive no payoff. Additionally, because a passive transformation is ``costly,'' the payoff of the Speaker will be deduced by $y$ whenever he chooses to produce a passive.
+If the Hearer guesses the correct scope as defined by Nature, both the Speaker and Hearer receive a payoff of $x$. If the players fail to engineer this, both will receive no payoff. Additionally, because a passive transformation is ``costly,'' the payoff of the Speaker will be deducted by $y$ whenever he chooses to produce a passive.
 
 \begin{figure}
 
@@ -171,7 +199,7 @@ for tree={grow=east,draw=black,line width=0.2pt,parent anchor=east,child anchor=
 \end{figure}
 
 
-Since this decision tree involves tree players with substantive choices, it helps to narrow down the decision to find Nash Equilibria or optimal strategies. Let's put ourselves in the position of the Hearer. The Hearer is the one dealing with the informational asymmetry guessing the choice of Nature given the Speaker's utterance. Given the aforementioned decision tree in Figure \ref{tree}, the Hearer can make two hypotheses about Nature, that it chose to demand that the subject $\forall$ scope over the object $\exists$, which is represented in Figure \ref{all}, or that it demands that the object $\exists$ should scope over the subject $\forall$.
+Since this decision tree involves three players with substantive choices, it helps to narrow down the decision to find Nash Equilibria or optimal strategies. Let's put ourselves in the position of the Hearer. The Hearer is the one dealing with the informational asymmetry guessing the choice of Nature given the Speaker's utterance. Given the aforementioned decision tree in Figure \ref{tree}, the Hearer can make two hypotheses about Nature, that it chose to demand that the subject $\forall$ scope over the object $\exists$, which is represented in Figure \ref{all}, or that it demands that the object $\exists$ should scope over the subject $\forall$.
 
 \begin{figure}
 \centering
