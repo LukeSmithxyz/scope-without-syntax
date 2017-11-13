@@ -95,14 +95,14 @@ Player 0, who we can term \textbf{Nature} dictates what the needed scope interpr
 We can think of Player 0 as a random or given element of the model.
 Player 1, \textbf{the Speaker}, knows what the needed scope given by Nature is, and has to encode a linguistic message to communicate it to Player 2: \textbf{the Hearer} who is ignorant of it (illustrated in Figure \ref{tree}).
 
-If the Hearer's interpreted scope and the scope selected by Nature match, both human players get a payoff ($x$), while if they do not match, there has been a miscommunication and this there is no payoff.
+If the Hearer's interpreted scope and the scope selected by Nature match, both human players get a payoff ($c$), while if they do not match, there has been a miscommunication and this there is no payoff.
 Similarly, we can formalize our assumptions in the previous section.
-If transformations, specifically passives, are costly or dispreferred in some way, we can model them as saying that they reduce the payoff to the speaker to some degree ($-y$).
+If transformations, specifically passives, are costly or dispreferred in some way, we can model them as saying that they reduce the payoff to the speaker to some degree ($-p$).
 Similarly, instances of free word order and so-called ``scrambling'' do \emph{not} reduce any payoff.
-Lastly, surface scope should be universally preferred, so in situations where a speaker and hearer settle on an \emph{inverse} scope reading of a sentence, their payoffs are reduced by some degree ($-w$).
+Lastly, surface scope should be universally preferred, so in situations where a speaker and hearer settle on an \emph{inverse} scope reading of a sentence, their payoffs are reduced by some degree ($-i$).
 
-We should also assume that $x > (y + w)$, meaning that it is always preferable for the two interlocutors to understand each other even if transformations and inverse scope may dig into that payoff.
-Also, $y$ and $w$ are not necessarily larger or smaller than one another, and may vary from situation to situation, meaning that in some situations, it may be preferable for a speaker to vie for inverse scope rather than performing a transformation, while in others, it opposite may be true.
+We should also assume that $c > (p + i)$, meaning that it is always preferable for the two interlocutors to understand each other even if transformations and inverse scope may dig into that payoff.
+Also, $p$ and $i$ are not necessarily larger or smaller than one another, and may vary from situation to situation, meaning that in some situations, it may be preferable for a speaker to vie for inverse scope rather than performing a transformation, while in others, it opposite may be true.
 
 The particulars of an instantiation of the game are based in the structure of whatever language is being spoken.
 For any given language, there will be a different set of syntactically valid utterances that the Speaker can use to signal to the Hearer what the intended scope is.
@@ -161,7 +161,7 @@ Again, given our constraints above, we can derive these facts from the interacti
 
 First, the Nature player determines whether the intended scope of the utterance should be where the universal quantifier takes wide scope ($\forall>\exists$) or where the existential does ($\exists>\forall$). Then the Speaker takes his turn choosing either to word the sentence as the active ``Everyone loves someone'' or the passive ``Someone is loved by everyone.'' Lastly, the Hearer chooses whether to interpret the sentences with surface scope or inverse scope.
 
-If the Hearer guesses the correct scope as defined by Nature, both the Speaker and Hearer receive a payoff of $x$. If the players fail to engineer this, both will receive no payoff. Additionally, because a passive transformation is ``costly,'' the payoff of the Speaker will be deducted by $y$ whenever he chooses to produce a passive.
+If the Hearer guesses the correct scope as defined by Nature, both the Speaker and Hearer receive a payoff of $c$. If the players fail to engineer this, both will receive no payoff. Additionally, because a passive transformation is ``costly,'' the payoff of the Speaker will be deducted by $p$ whenever he chooses to produce a passive.
 
 \begin{figure}
 
@@ -174,22 +174,22 @@ for tree={grow=east,draw=black,line width=0.2pt,parent anchor=east,child anchor=
 [Nature,rectangle, s sep=25pt,
   [Speaker,edge label={node[Below]{$\exists>\forall$}}
     [Hearer,edge label={node[Below]{Passive}}
-	[{$-y-w,-w$},edge label={node[Below]{Inverse}}]
-	[{$x-y,x$},edge label={node[Below]{Surface}}]
+	[{$-p-i,-i$},edge label={node[Below]{Inverse}}]
+	[{$c-p,x$},edge label={node[Below]{Surface}}]
 	]
     [Hearer,edge label={node[Above]{Active}}
-	[{$x-w,x-w$},edge label={node[Below]{Inverse}}]
+	[{$c-i,c-i$},edge label={node[Below]{Inverse}}]
 	[{$0,0$},edge label={node[Below]{Surface}}]
 	]
   ]
   [Speaker,edge label={node[Above]{$\forall>\exists$}}
     [Hearer,edge label={node[Below]{Passive}}
-	[{$x-y-w,x-w$},edge label={node[Below]{Inverse}}]
-	[{$-y,0$},edge label={node[Below]{Surface}}]
+	[{$c-p-i,c-i$},edge label={node[Below]{Inverse}}]
+	[{$-p,0$},edge label={node[Below]{Surface}}]
 	]
     [Hearer,edge label={node[Above]{Active}}
-	[{$-w,-w$},edge label={node[Below]{Inverse}}]
-	[{$x,x$},edge label={node[Below]{Surface}}]
+	[{$-i,-i$},edge label={node[Below]{Inverse}}]
+	[{$c,c$},edge label={node[Below]{Surface}}]
 	]
   ]
 ]
@@ -206,10 +206,10 @@ Since this decision tree involves three players with substantive choices, it hel
 \begin{tikzpicture}
 
 \matrix[matrix of math nodes,every odd row/.style={align=right},every even row/.style={align=left},every node/.style={text width=1.5cm},row sep=0.2cm,column sep=0.2cm] (m) {
-$x$&$-y$\\
-$x$&$0$\\
-$-w$&$x-y-w$\\
-$-w$&$x-w$\\
+$c$&$-p$\\
+$c$&$0$\\
+$-i$&$c-p-i$\\
+$-i$&$c-i$\\
 };
 \draw (m.north east) rectangle (m.south west);
 \draw (m.north) -- (m.south);
@@ -246,10 +246,10 @@ A look at the second hypothesis, that Nature has chosen $\exists>\forall$ will s
 \begin{tikzpicture}
 
 \matrix[matrix of math nodes,every odd row/.style={align=right},every even row/.style={align=left},every node/.style={text width=1.5cm},row sep=0.2cm,column sep=0.2cm] (m) {
-$0$&$x-y$\\
-$0$&$x$\\
-$x-w$&$-y-w$\\
-$x-w$&$-w$\\
+$0$&$c-p$\\
+$0$&$c$\\
+$c-i$&$-p-i$\\
+$c-i$&$-i$\\
 };
 \draw (m.north east) rectangle (m.south west);
 \draw (m.north) -- (m.south);
@@ -315,7 +315,7 @@ all book-IND a student read \\
 
 \subsubsection{An Account of Scramblible Scope}
 
-The \emph{Scramble} strategy, which consists of moving the object left of the subject, achieves the linear order of passivization without the cost of $y$ to the Speaker. Because of this, \emph{Scramble} in a scrambling language is always preferable to the dominated strategy \emph{Passive} for the Speaker.
+The \emph{Scramble} strategy, which consists of moving the object left of the subject, achieves the linear order of passivization without the cost of $p$ to the Speaker. Because of this, \emph{Scramble} in a scrambling language is always preferable to the dominated strategy \emph{Passive} for the Speaker.
 
 \begin{figure}
 
@@ -328,29 +328,29 @@ for tree={grow=east,draw=black,line width=0.2pt,parent anchor=east,child anchor=
 [Nature,rectangle, s sep=25pt,
   [Speaker,edge label={node[Below]{$\exists>\forall$}}
     [Hearer,edge label={node[Below]{Passive}}
-	[{$-y-w,-w$},edge label={node[Below]{Inverse}}]
-	[{$x-y,x$},edge label={node[Below]{Surface}}]
+	[{$-p-i,-i$},edge label={node[Below]{Inverse}}]
+	[{$c-p,c$},edge label={node[Below]{Surface}}]
 	]
     [Hearer,edge label={node[Above]{Active}}
-	[{$x-w,x-w$},edge label={node[Below]{Inverse}}]
+	[{$c-i,c-i$},edge label={node[Below]{Inverse}}]
 	[{$0,0$},edge label={node[Below]{Surface}}]
 	]
 [Hearer, edge label={node[Above]{Scramble}}
-[{$-w,-w$}, edge label={node[Below]{Inverse}}]
-[{$x,x$}, edge label={node[Below]{Surface}}]
+[{$-i,-i$}, edge label={node[Below]{Inverse}}]
+[{$c,c$}, edge label={node[Below]{Surface}}]
 ]
   ]
   [Speaker,edge label={node[Above]{$\forall>\exists$}}
     [Hearer,edge label={node[Below]{Passive}}
-	[{$x-y-w,x-w$},edge label={node[Below]{Inverse}}]
-	[{$-y,0$},edge label={node[Below]{Surface}}]
+	[{$c-p-i,c-i$},edge label={node[Below]{Inverse}}]
+	[{$-p,0$},edge label={node[Below]{Surface}}]
 	]
     [Hearer,edge label={node[Above]{Active}}
-	[{$-w,-w$},edge label={node[Below]{Inverse}}]
-	[{$x,x$},edge label={node[Below]{Surface}}]
+	[{$-i,-i$},edge label={node[Below]{Inverse}}]
+	[{$c,c$},edge label={node[Below]{Surface}}]
 	]
 [Hearer, edge label={node[Above]{Scramble}}
-[{$x-w$}, edge label={node[Below]{Inverse}}]
+[{$c-i$}, edge label={node[Below]{Inverse}}]
 [{$0,0$}, edge label={node[Below]{Surface}}]
 ]
   ]
@@ -370,10 +370,10 @@ We should see that there is no straight-forward dominant strategy for either pla
 \begin{tikzpicture}
 
 \matrix[matrix of math nodes,every odd row/.style={align=right},every even row/.style={align=left},every node/.style={text width=1.5cm},row sep=0.2cm,column sep=0.2cm] (m) {
-$x$&$0$\\
-$x$&$0$\\
-$-w$&$x-w$\\
-$-w$&$x-w$\\
+$c$&$0$\\
+$c$&$0$\\
+$-i$&$c-i$\\
+$-i$&$c-i$\\
 };
 \draw (m.north east) rectangle (m.south west);
 \draw (m.north) -- (m.south);
@@ -403,10 +403,10 @@ $-w$&$x-w$\\
 \begin{tikzpicture}
 
 \matrix[matrix of math nodes,every odd row/.style={align=right},every even row/.style={align=left},every node/.style={text width=1.5cm},row sep=0.2cm,column sep=0.2cm] (m) {
-$0$&$x$\\
-$0$&$x$\\
-$x-w$&$-w$\\
-$x-w$&$-w$\\
+$0$&$c$\\
+$0$&$c$\\
+$c-i$&$-i$\\
+$c-i$&$-i$\\
 };
 \draw (m.north east) rectangle (m.south west);
 \draw (m.north) -- (m.south);
@@ -432,7 +432,7 @@ $x-w$&$-w$\\
 
 Specifically, independent of the Speaker and Nature's choices, the Hearer will want to avoid choosing the \emph{Inverse} strategy. The Speaker realizes this and can strategically select his strategy based on what will require the Hearer to \emph{not} select the \emph{Inverse} strategy. This acts as a signal to the Hearer.
 
-In the meta-game, the Speaker acts so that both players can be applicable for the highest possible payoff of $x$. And a Hearer totally blind to the Speaker's actions should have a bias to the \emph{Surface} scope interpretation strategy.
+In the meta-game, the Speaker acts so that both players can be applicable for the highest possible payoff of $c$. And a Hearer totally blind to the Speaker's actions should have a bias to the \emph{Surface} scope interpretation strategy.
 
 If the Hearer or Speaker violate this meta-strategy, they would be subject to a descrease in expected returns over time, independent of the other players actions. Therefore in a language with the free movement of nominals, we should predict that Hearers should \emph{only} try to interpret sentences in surface order in normal situations, and that speakers should scramble or not depending on which produces a sentence which gives the correct scope interpretations with a surface scope reading.
 
