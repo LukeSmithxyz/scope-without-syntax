@@ -15,6 +15,7 @@
 \usepackage{longtable}
 \usepackage{dialogue}
 \usepackage{textgreek}
+\usepackage{framed}
 \addbibresource{$HOME/Documents/LaTeX/uni.bib}
 
 \usetikzlibrary{calc}
@@ -66,8 +67,7 @@
 
 
 Before proceeding, I'll make some \emph{a priori} assumptions about scope interpretations.
-These could likely be justified on already known pragmatic or processing constraints, but I will not attempt to do so here.
-We will see, however, that much of the diversity of scope can be accounted for merely taking these as interactive assumptions.
+We will see that much of the diversity of scope can be accounted for merely taking these as interactive assumptions.
 
 \begin{enumerate}
 \item Speakers and listeners prefer for quantifiers to be in ``surface scope'' order.
@@ -75,13 +75,51 @@ We will see, however, that much of the diversity of scope can be accounted for m
 \item ``Scrambling'' in languages which exhibit it, is not similarly costly.
 \end{enumerate}
 
+Before explaning the model, it's at least worth justifying all three of these on functional grounds.
+
+\subsection{Preference for Surface Scope}
+
+<++>
+
+\subsection{Transformations are ``marked''}
+
+A longstanding assumption of transformational grammar was that those utterances which are ``transformed'' are in some ways, more marked or at least are derived from simplex epxressions.
+
+\begin{exe}
+	\ex\label{caes}
+	\begin{xlist}
+	\ex Caesar crossed the Rubicon.\label{simp}
+	\ex It was Caesar who crossed the Rubicon.\label{celft}
+	\ex The Rubicon was crossed by Caesar.\label{pass}
+	\end{xlist}
+\end{exe}
+
+That is, while all sentences in (\ref{caes}) share a semantically equivalent kernel, (\ref{simp}) is in someway more basic than the cleft (\ref{celft}) or the passive (\ref{pass}).
+Earlier ideas in Generative Grammar assumed that this was because (\ref{celft}) and (\ref{pass}) were literally derived from (\ref{simp}), thus leading to the psycholinguistic thesis of the Derivational Theory of Complexity, hypothesizing that the latter two sentences were marked
+
+Theories such as this have fallen out of favor in mainstream Generative Grammar, but regardless, data from acquisition does indeed show that sentences such as (\ref{celft}) and (\ref{pass}) are acquired and employed at a distinctly later stage of language development.
+
+
+\subsection{Scrambling is not costly}
+
+<++>
 
 \section{Model}
 
 Additionally, it's important to be clear about the Game Theoretics of communication.
-Resolving scope ambiguities like that in (\ref{first}) is a kind of \emph{Battle of the Sexes}.
+Resolving scope ambiguities like that in (\ref{first}) is a kind of \emph{Matching Pennies} with an information assymetry.
 That is, two speakers must converge on the same interpretation of a sentence.
 If the speaker intends for a universal quantifier, such as \emph{every}, to scope over an existential one, such as \emph{some}, he ideally must word his sentence in such a way to communicate this.
+
+\begin{framed}
+	\small
+
+	\textbf{Game Theoretic Terms}
+
+	\textbf{Matching Pennies} -- A game where two players must pick the same choice without knowing the other's choice.
+
+	\textbf{Information asymmetry} -- One player knows something the other doesn't. In our model, the Speaker is aware of the require scope interpretation, but the Hearer is not.
+\end{framed}
 
 To be more specific, we can say this is a kind of 3-player coordination game.
 Player 0, who we can term \textbf{Nature} dictates what the needed scope interpretation should be, that is, whether, based on circumstances, a universal quantifier must scope over an existential quantifier, or \emph{vice versa} or any other combination of quantificational elements.
@@ -267,7 +305,7 @@ $c-i$&$-i$\\
 \end{figure}
 
 
-Figure \ref{some} gives a Hearer no conclusion about the Speaker's dominant strategy, it is simply a kind of \emph{Battle of the Sexes} with the additional cost of the passive transformation.\footnote{There is the clear \emph{focal point} of the Speaker using an \emph{Active} and the Hearer interpreting inverse scope, but this is illusory given the random element of Nature and the wider tree in Figure \ref{tree}.} However, since we cannot \emph{rule out} the use of the passive, and we have already established (\ref{cost}), we can also logically conclude (\ref{pass}).
+Figure \ref{some} gives a Hearer no conclusion about the Speaker's dominant strategy, it is simply a kind of \emph{Matching Pennies} game with the additional cost of the passive transformation.\footnote{There is the clear \emph{focal point} of the Speaker using an \emph{Active} and the Hearer interpreting inverse scope, but this is illusory given the random element of Nature and the wider tree in Figure \ref{tree}.} However, since we cannot \emph{rule out} the use of the passive, and we have already established (\ref{cost}), we can also logically conclude (\ref{pass}).
 
 
 \begin{exe}
