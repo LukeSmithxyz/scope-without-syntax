@@ -1,0 +1,106 @@
+Hi Luke,
+
+I've had a chance to write up some comments for your paper. As I said
+before, I'm sorry I couldn't be at your s-circle talk. I heard it was good
+and generated good discussion!
+
+I'm pasting the comments below. If you want to get together sometime to
+chat about them, i would be totally willing. I would also be happy to read
+a current try or parts of a draft of anything you're currently working on.
+
+Take care!
+
+Robert
+
+
+Overall comments
+----------------
+
+I think the paper is overall really nice. You have a good collection of
+data here, and the data are well-marshaled toward your analytical aims.
+Also, your explanations of the game-theoretic calculations to determine
+scope interpretations are really nice. I think, for me, there are a few
+high level things that you should probably think about.
+
+-- It would be really nice to have a deeper explanation for what makes a
+transformation costless or not. I don't think this needs to be completely
+solved, but some analytical intuitions about how to deal with this would
+really help deliver your argument with a punch. Of the top I my head
+
+-- Have you thought at all about other architectures? This is connected to
+a point I raise down below about pg3. For instance, you could redo this
+with bayesian signaling games where the hearer is trying to determine the
+probability of message m given signal s (a conditional probability), while
+the speaker is trying to choose a signal that maximizing the probability
+that the hearer will recover it. Utility of choices is then just waited
+against the probability that messages are recovered modified by costs. I
+bringing up this up because it seems to more amendable to a talking about
+tendencies as opposed to hard grammaticality, and you could even
+experimentally predict how often listeners should predict an interpretation
+given a form. We could talk more about it, but maybe you could raise this
+as a possibility for future work as a way to fight against my critique
+about pg3.
+
+-- There are related scope effects that I wonder if you can address. For
+instance, even in English which allows inverse scope, it is harder for
+universals to take inverse scope over indefinites than vice versa: Every
+man loves a women vs. A man loves every woman. Do you have an idea about
+how to extend your system to other things that affect scope? Would you just
+add more payoff penalties, etc.?
+
+-- Syntactic scope and interpretation are different. For instance, a
+logical form like "for all x [MAN(x) implies exists y[DOG(y) and
+LOVE(x,y)]] has the surface scope **structure** but is consistent (i.e.,
+true) in a scenarios where every man happens to love the same dog (which
+might account for some of the effect in the previous point). I just think
+it would be nice for you to maybe address this point somehow---that is, the
+point that your (3b) doesn't like the indefinite taking scope over "every",
+but that it can't even have an in-situ wide scope interpretation.
+
+########
+
+I also have some smaller comments, mostly about issues of presentation.
+
+pg1
+
+I wouldn't use "battle of the sexes" here. I don't think that speakers and
+hearers are really in competition. It's that the interpretations are in
+competition and the speakers are trying to maximize utility (a component of
+which involves successful coordination). I might try to just rephrase this
+without the metaphor and make it clear what's competing and to what end.
+
+pg2
+
+I might rephrase this paragraph about payoffs to make it clearer that what
+you're doing is that you are encoding these assumption about scope into the
+model from which you will then make a series of nice predictions. I'm just
+worried uncharitable readers will look at sentences like:
+
+"If transformations, specifically passives, are costly or dis-preferred in
+some way, we can model them as saying that they reduce the payoff to the
+speaker to some degree (−y)"
+
+And saying, this doesn't model anything, but instead formalizing an
+assumption. Just make it clear that these are starting assumptions from
+which cool facts will be derived.
+
+pg3
+
+I am a bit skeptical of a hard grammatical constraint on inverse scope
+readings in passives. I think all things being equal they are
+dis-preferred, but you can make them good. Consider the fact that
+appositives on indefinites privileged the singleton reading. If that is
+true and if your constraint is hard, then the following should seem
+ungrammatical, but it seems fine to me.
+
+Every watermelon was eaten by a man, who sneaked into the picnic when we
+weren't looking.
+
+I would really like a theory that says inverse scope is not barred in these
+scenarios, but the pays are such that they are strongly dis-preferred all
+things being equal. What do you think?
+
+
+-- 
+Assistant Professor of Linguistics
+University of Arizona
