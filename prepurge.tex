@@ -4,7 +4,6 @@
 \usepackage{ot-tableau}
 \usepackage[backend=biber, style=authoryear-icomp]{biblatex}
 \usepackage{forest}
-\usepackage[normalem]{ulem}
 \usepackage{tikz}
 \usepackage{easylist}
 \usepackage{hanging}
@@ -25,8 +24,6 @@
 \usetikzlibrary{calc}
 \usetikzlibrary{matrix}
 \usetikzlibrary{positioning}
-
-\definecolor{shadecolor}{gray}{.80}
 
 
 \usetikzlibrary{shapes.geometric, arrows, trees}
@@ -170,9 +167,10 @@ the Speaker knows the required interpretation and in speaking attempts to signal
 Both players ``win'' if the Speaker is succesful in leading the Hearer to the correct interpretation.
 If the speaker intends for a universal quantifier, such as \emph{every}, to scope over an existential one, such as \emph{some}, he ideally must word his sentence in such a way to communicate this.
 
-\begin{shaded}
+\begin{framed}
 	\small
-	\subsection*{Game Theoretic Terms}
+
+	\textbf{Game Theoretic Terms}
 
 	\textbf{Imperfect information} -- When at least one player is not perfectly aware of the actions of another. In our game, the Hearer is not aware of the decision of Nature, ergo this is a game with imperfect information.
 
@@ -183,9 +181,7 @@ If the speaker intends for a universal quantifier, such as \emph{every}, to scop
 	\textbf{Nash Equilibrium} -- A point in a game where no player can improve his position by changing strategies given what he knows. While Nash Equilibria are usually the McGuffin of Game Theoretic analysis, our game has no proper Nash Equilibrium (not assuming iteration).
 
 	\textbf{Schelling Point} -- A point which is not a Nash Equilibrium, but due to some meta-game reasoning is a particularly marked.
-
-	\textbf{Equivalence Classes} -- In an Imperfect Information game (like this one) nodes in a decision tree that a player cannot distinguish due to his imperfect information.
-\end{shaded}
+\end{framed}
 
 
 \begin{figure}
@@ -203,23 +199,11 @@ If the speaker intends for a universal quantifier, such as \emph{every}, to scop
 	\caption{The sequence of player choices\label{seq}}
 \end{figure}
 
-\begin{figure}
-	\begin{tabular}{r||l}
-		Abrv.& Strategy name\\\hline\hline
-		A & \textbf{A}ctive Voice (Speaker)\\
-		P & \textbf{P}assive Voice (Speaker)\\
-		S & Interpret \textbf{S}urface scope (Hearer)\\
-		I & Interpret \textbf{I}nverse scope (Hearer)\\
-		$Sub > Obj$ & Demand the subject scope over the object (Nature)\\
-		$Obj > Sub$ & Demand the object scope over the subject (Nature)\\
-	\end{tabular}
-\end{figure}
-
 To be more specific, we can say this is a kind of 3-player coordination game (where the sequence is indicated in Figure \ref{seq}).
 Player 0, who we can term \textbf{Nature} dictates what the needed scope interpretation should be, that is, whether, based on circumstances, a subject quantifier must scope over an object quantifier, or \emph{vice versa} or any other combination of quantificational elements.
 \footnote{We will only be including subject and object quantification for sake of simplicity to outline some general principles.}
 We can think of the choice of Player 0, Nature, as a random or given element of the model.
-Player 1, \textbf{the Speaker}, knows what the needed scope given by Nature is, and has to encode a linguistic message to communicate it to Player 2: \textbf{the Hearer} who is ignorant of it (illustrated in Figure \ref{exten}).
+Player 1, \textbf{the Speaker}, knows what the needed scope given by Nature is, and has to encode a linguistic message to communicate it to Player 2: \textbf{the Hearer} who is ignorant of it (illustrated in Figure \ref{tree}).
 In each language, the Speaker might have different strategies usable to communicate this message, depending on the structure of a language.
 \footnote{Thus, our intent here is not to argue how or why a given sentence in a language is grammatical or acceptable, but why Speakers choose to use a given sentence to communicate a particular scope reading.}
 
@@ -253,11 +237,17 @@ Lastly, if the dispreferred inverse scope has to be employed, both speakers will
 
 \begin{figure}
 \begin{center}
+% First, set the overall layout of the tree
+% You might need to play with these sizes to ensure nothing overlaps.
 \tikzstyle{level 1}=[level distance=1.5cm, sibling distance=6.5cm]
 \tikzstyle{level 2}=[level distance=1.5cm, sibling distance=3cm]
 \tikzstyle{level 3}=[level distance=1.5cm, sibling distance=1.75cm]
 \tikzstyle{level 4}=[level distance=1.5cm, sibling distance=2cm]
 \begin{tikzpicture}
+%Start with the parent node, and slowly build out the tree
+% with each "child" representing a new level of the diagram
+% each "node" represents a labelled (or unlabeled if you
+% want) node in the diagram.
 \node {Nature}
 	child{
 		node{Speaker}
@@ -266,33 +256,33 @@ Lastly, if the dispreferred inverse scope has to be employed, both speakers will
 			child{
 				node{$\displaystyle\binom{c}{c}$}
 				edge from parent
-				node[left]{$S$}
+				node[left]{S}
 			}
 			child{
 				node{$\displaystyle\binom{-i}{-i}$}
 				edge from parent
-				node[right]{$I$}
+				node[right]{I}
 			}
 		edge from parent
-		node[left]{$A$}
+		node[left]{A}
 		}
 		child{
 			node(a){Hearer}
 			child{
 				node{$\displaystyle\binom{-p}{0}$}
 				edge from parent
-				node[left]{$S$}
+				node[left]{S}
 			}
 			child{
 				node{$\displaystyle\binom{c-p-i}{c-i}$}
 				edge from parent
-				node[right]{$I$}
+				node[right]{I}
 			}
 		edge from parent
-		node[right]{$P$}
+		node[right]{P}
 		}
 	edge from parent
-	node[left]{${Sub}>{Obj}$}
+	node[left]{${\forall}>{\exists}$}
 	}
 	child{
 		node{Speaker}
@@ -301,57 +291,115 @@ Lastly, if the dispreferred inverse scope has to be employed, both speakers will
 			child{
 				node{$\displaystyle\binom{0}{0}$}
 				edge from parent
-				node[left]{$S$}
+				node[left]{S}
 			}
 			child{
 				node{$\displaystyle\binom{c-i}{c-i}$}
 				edge from parent
-				node[right]{$I$}
+				node[right]{I}
 			}
 		edge from parent
-		node[left]{$A$}
+		node[left]{A}
 		}
 		child{
 			node(c){Hearer}
 			child{
 				node{$\displaystyle\binom{c-p}{c}$}
 				edge from parent
-				node[left]{$S$}
+				node[left]{S}
 			}
 			child{
 				node{$\displaystyle\binom{-p-i}{-i}$}
 				edge from parent
-				node[right]{$I$}
+				node[right]{I}
 			}
 		edge from parent
-		node[right]{$P$}
+		node[right]{P}
 		}
 	edge from parent
-	node[right]{${Obj}>{Sub}$}
+	node[right]{${\exists}>{\forall}$}
 	};
 \draw [dashed](d)to[in=180](b);
 \draw [dashed](a)to[in=180](c);
 \end{tikzpicture}
 \end{center}
-\caption{The Extensive Game\label{exten}, explanation in Figure \ref{expl}}
+\caption{The Extensive Game}
+asdfkjhasdkjfh
+
+asdf
 \end{figure}
 
-\begin{figure}
-	\begin{shaded}
-		\small
-		\subsection*{Notes on the Game Tree}
-Each branch represents a player choice. Payoffs to the Speaker and the Hearer are at each terminal node, the Speaker's being on top and the Hearer's below.\\
-
-The dotted lines represent the equivalence classes for the Hearer. That is, they unite the nodes that the Hearer can not distinguish. To be clear, if the Speaker chooses the ``Active'' strategy, the Hearer knows he must be on the nexus either first or third from left, but can't distinguish between the two since he is unaware of Nature's original choice.
-	\caption{A primer on Extensive Game Theory notation as in Figure \ref{exten}\label{expl}}
-	\end{shaded}
-\end{figure}
+%\begin{figure}
+%
+%\begin{forest} 
+%for tree={grow=east,draw=black,line width=0.2pt,parent anchor=east,child anchor=west,edge={draw=black},edge label={\Huge\color{black}},edge path={\noexpand\path[\forestoption{edge}](!u.parent anchor) -- ([xshift=-1.6cm].child anchor) --    
+      %(.child anchor)\forestoption{edge label};
+  %},
+  %l sep=2cm,
+%} 
+%[Nature,rectangle, s sep=25pt,
+  %[Speaker,edge label={node[Below]{$\exists>\forall$}}
+    %[Hearer,edge label={node[Below]{Passive}}
+	%[{$-p-i,-i$},edge label={node[Below]{Inverse}}]
+	%[{$c-p,x$},edge label={node[Below]{Surface}}]
+	%]
+    %[Hearer,edge label={node[Above]{Active}}
+	%[{$c-i,c-i$},edge label={node[Below]{Inverse}}]
+	%[{$0,0$},edge label={node[Below]{Surface}}]
+	%]
+  %]
+  %[Speaker,edge label={node[Above]{$\forall>\exists$}}
+    %[Hearer,edge label={node[Below]{Passive}}
+	%[{$c-p-i,c-i$},edge label={node[Below]{Inverse}}]
+	%[{$-p,0$},edge label={node[Below]{Surface}}]
+	%]
+    %[Hearer,edge label={node[Above]{Active}}
+	%[{$-i,-i$},edge label={node[Below]{Inverse}}]
+	%[{$c,c$},edge label={node[Below]{Surface}}]
+	%]
+  %]
+%]
+%\end{forest}
+%
+%\caption{Decision Flow of the Game of ``Everybody loves somebody''\label{tree}}
+%\end{figure}
 
 
 Since this decision tree involves three players with substantive choices, it helps to narrow down the decision to find Nash Equilibria or optimal strategies.
 Let's put ourselves in the position of the Hearer.
 The Hearer is the one dealing with the informational asymmetry guessing the choice of Nature given the Speaker's utterance.
-Given the aforementioned decision tree in Figure \ref{exten}, the Hearer can make two hypotheses about Nature, that it chose to demand that the subject $\forall$ scope over the object $\exists$, which is represented in Figure \ref{all}, or that it demands that the object $\exists$ should scope over the subject $\forall$.
+Given the aforementioned decision tree in Figure \ref{tree}, the Hearer can make two hypotheses about Nature, that it chose to demand that the subject $\forall$ scope over the object $\exists$, which is represented in Figure \ref{all}, or that it demands that the object $\exists$ should scope over the subject $\forall$.
+
+%\begin{figure}
+%\centering
+%\begin{tikzpicture}
+%\matrix[matrix of math nodes,every odd row/.style={align=right},every even row/.style={align=left},every node/.style={text width=1.5cm},row sep=0.2cm,column sep=0.2cm] (m) {
+%$c$&$-p$\\
+%$c$&$0$\\
+%$-i$&$c-p-i$\\
+%$-i$&$c-i$\\
+%};
+%\draw (m.north east) rectangle (m.south west);
+%\draw (m.north) -- (m.south);
+%\draw (m.east) -- (m.west);
+%
+%\coordinate (a) at ($(m.north west)!0.25!(m.north east)$);
+%\coordinate (b) at ($(m.north west)!0.75!(m.north east)$);
+%\node[above=5pt of a,anchor=base] {Active};
+%\node[above=5pt of b,anchor=base] {Passive};
+%
+%\coordinate (c) at ($(m.north west)!0.25!(m.south west)$);
+%\coordinate (d) at ($(m.north west)!0.75!(m.south west)$);
+%\node[left=2pt of c,text width=1cm]  {Surface};
+%\node[left=2pt of d,text width=1cm]  {Inverse};
+%
+%\node[above=18pt of m.north] (firm b) {Speaker};
+%\node[left=1.6cm of m.west,rotate=90,align=center,anchor=center] {Hearer};
+%
+%%\node[above=5pt of firm b]  {If Nature chooses $\forall>\exists$};
+%\end{tikzpicture}
+%\caption{If Nature selects $\forall>\exists$\label{all}}
+%\end{figure}
 
 The key to the strategy is the cost of the passive $p$.
 Let's take the situation when Nature selects ${\forall}>{\exists}$.
@@ -371,6 +419,37 @@ Or put more generally in (\ref{cost}).
 \ex{\textit{A speaker will not engage in a costly transformation which yields an undesired scope order.\label{cost}}}
 \end{exe}
 
+\begin{figure}
+\centering
+\begin{tikzpicture}
+
+\matrix[matrix of math nodes,every odd row/.style={align=right},every even row/.style={align=left},every node/.style={text width=1.5cm},row sep=0.2cm,column sep=0.2cm] (m) {
+$0$&$c-p$\\
+$0$&$c$\\
+$c-i$&$-p-i$\\
+$c-i$&$-i$\\
+};
+\draw (m.north east) rectangle (m.south west);
+\draw (m.north) -- (m.south);
+\draw (m.east) -- (m.west);
+
+\coordinate (a) at ($(m.north west)!0.25!(m.north east)$);
+\coordinate (b) at ($(m.north west)!0.75!(m.north east)$);
+\node[above=5pt of a,anchor=base] {Active};
+\node[above=5pt of b,anchor=base] {Passive};
+
+\coordinate (c) at ($(m.north west)!0.25!(m.south west)$);
+\coordinate (d) at ($(m.north west)!0.75!(m.south west)$);
+\node[left=2pt of c,text width=1cm]  {Surface};
+\node[left=2pt of d,text width=1cm]  {Inverse};
+
+\node[above=18pt of m.north] (firm b) {Speaker};
+\node[left=1.6cm of m.west,rotate=90,align=center,anchor=center] {Hearer};
+
+%\node[above=5pt of firm b]  {If Nature chooses $\forall>\exists$};
+\end{tikzpicture}
+\caption{If Nature selects $\exists>\forall$\label{some}}
+\end{figure}
 
 
 %Figure \ref{some} gives a Hearer no conclusion about the Speaker's dominant strategy, it is simply a kind of \emph{Matching Pennies} game with the additional cost of the passive transformation.\footnote{There is the clear \emph{focal point} of the Speaker using an \emph{Active} and the Hearer interpreting inverse scope, but this is illusory given the random element of Nature and the wider tree in Figure \ref{tree}.} However, since we cannot \emph{rule out} the use of the passive, and we have already established (\ref{cost}), we can also logically conclude (\ref{pass}).
@@ -437,107 +516,116 @@ In our Game Theoretic framework, we can say that the \emph{Scramble} strategy, w
 	Because of this, \emph{Scramble} in a scrambling language is always preferable to the dominated strategy \emph{Passive} for the Speaker.
 
 \begin{figure}
-\begin{center}
-\tikzstyle{level 1}=[level distance=1.5cm, sibling distance=6.5cm]
-\tikzstyle{level 2}=[level distance=1.5cm, sibling distance=3cm]
-\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=1.75cm]
-\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=2cm]
-\begin{tikzpicture}
-\node {Nature}
-	child{
-		node{Speaker}
-		child{
-			node(d){Hearer}
-			child{
-				node{$\displaystyle\binom{c}{c}$}
-				edge from parent
-				node[left]{$S$}
-			}
-			child{
-				node{$\displaystyle\binom{-i}{-i}$}
-				edge from parent
-				node[right]{$I$}
-			}
-		edge from parent
-		node[left]{$A$}
-		}
-		child{
-			node(a){Hearer}
-			child{
-				node{$\displaystyle\binom{0}{0}$}
-				edge from parent
-				node[left]{$S$}
-			}
-			child{
-				node{$\displaystyle\binom{c-i}{c-i}$}
-				edge from parent
-				node[right]{$I$}
-			}
-		edge from parent
-		node[right]{$Sc$}
-		}
-	edge from parent
-	node[left]{${Sub}>{Obj}$}
-	}
-	child{
-		node{Speaker}
-		child{
-			node(b){Hearer}
-			child{
-				node{$\displaystyle\binom{0}{0}$}
-				edge from parent
-				node[left]{$S$}
-			}
-			child{
-				node{$\displaystyle\binom{c-i}{c-i}$}
-				edge from parent
-				node[right]{$I$}
-			}
-		edge from parent
-		node[left]{$A$}
-		}
-		child{
-			node(c){Hearer}
-			child{
-				node{$\displaystyle\binom{c}{c}$}
-				edge from parent
-				node[left]{$S$}
-			}
-			child{
-				node{$\displaystyle\binom{-i}{-i}$}
-				edge from parent
-				node[right]{$I$}
-			}
-		edge from parent
-		node[right]{$Sc$}
-		}
-	edge from parent
-	node[right]{${Obj}>{Sub}$}
-	};
-\draw [dashed](d)to[in=180](b);
-\draw [dashed](a)to[in=180](c);
-\end{tikzpicture}
-\end{center}
-\caption{The Extensive Game\label{trees}, explanation in Figure \ref{expl}}
+
+\begin{forest} 
+for tree={grow=east,draw=black,line width=0.2pt,parent anchor=east,child anchor=west,edge={draw=black},edge label={\Huge\color{black}},edge path={\noexpand\path[\forestoption{edge}](!u.parent anchor) -- ([xshift=-1.6cm].child anchor) --    
+      (.child anchor)\forestoption{edge label};
+  },
+  l sep=2cm,
+} 
+[Nature,rectangle, s sep=25pt,
+  [Speaker,edge label={node[Below]{$\exists>\forall$}}
+    [Hearer,edge label={node[Below]{Passive}}
+	[{$-p-i,-i$},edge label={node[Below]{Inverse}}]
+	[{$c-p,c$},edge label={node[Below]{Surface}}]
+	]
+    [Hearer,edge label={node[Above]{Active}}
+	[{$c-i,c-i$},edge label={node[Below]{Inverse}}]
+	[{$0,0$},edge label={node[Below]{Surface}}]
+	]
+[Hearer, edge label={node[Above]{Scramble}}
+[{$-i,-i$}, edge label={node[Below]{Inverse}}]
+[{$c,c$}, edge label={node[Below]{Surface}}]
+]
+  ]
+  [Speaker,edge label={node[Above]{$\forall>\exists$}}
+    [Hearer,edge label={node[Below]{Passive}}
+	[{$c-p-i,c-i$},edge label={node[Below]{Inverse}}]
+	[{$-p,0$},edge label={node[Below]{Surface}}]
+	]
+    [Hearer,edge label={node[Above]{Active}}
+	[{$-i,-i$},edge label={node[Below]{Inverse}}]
+	[{$c,c$},edge label={node[Below]{Surface}}]
+	]
+[Hearer, edge label={node[Above]{Scramble}}
+[{$c-i$}, edge label={node[Below]{Inverse}}]
+[{$0,0$}, edge label={node[Below]{Surface}}]
+]
+  ]
+]
+\end{forest}
+
+\caption{Decision Flow of the Game of ``Everybody loves somebody'' in a Scrambling Language\label{trees}}
 \end{figure}
 
 Thus if we disregard the possibility of passivization as dispreferred as a scope technique, once again, both human players have two possible choices.
 Once again, we can again simplify the decision tree into two two-dimensional grids given the two different possible choices of the Nature player.
 We should see that there is no straight-forward dominant strategy for either player, but a very obvious signalling opportunity arises in the meta-game, or a Schelling Point.
 
+
 \begin{figure}
-	\begin{shaded}
-\begin{center}
-\begin{tabular}{r|cccc}
-	&$Sub, S$ & $Sub, I$ & $Obj, S$ & $Obj, I$ \\\hline\hline
-Active & $c$  & $-i$ & $0$  & $c-i$ \\
-	\sout{Passive} & $-p$ & $c-p-i$  & $c-p$  & $-p-i$  \\
-Scramble & $0$  & $c-i$ & $c$  & $-i$  \\
-\end{tabular}
-\end{center}
-\small For every pair of decisions made by other speakers, each payoff for the Speaker is greater if he chooses $Scramble$ than if he chooses $Passive$, due to the $-p$ penalty.
-	\caption{$Scramble$ dominates $Passive$ as a strategy for Speaker}
-	\end{shaded}
+\centering
+\begin{tikzpicture}
+
+\matrix[matrix of math nodes,every odd row/.style={align=right},every even row/.style={align=left},every node/.style={text width=1.5cm},row sep=0.2cm,column sep=0.2cm] (m) {
+$c$&$0$\\
+$c$&$0$\\
+$-i$&$c-i$\\
+$-i$&$c-i$\\
+};
+\draw (m.north east) rectangle (m.south west);
+\draw (m.north) -- (m.south);
+\draw (m.east) -- (m.west);
+
+\coordinate (a) at ($(m.north west)!0.25!(m.north east)$);
+\coordinate (b) at ($(m.north west)!0.75!(m.north east)$);
+\node[above=5pt of a,anchor=base] {Active};
+\node[above=5pt of b,anchor=base] {Scramble};
+
+\coordinate (c) at ($(m.north west)!0.25!(m.south west)$);
+\coordinate (d) at ($(m.north west)!0.75!(m.south west)$);
+\node[left=2pt of c,text width=1cm]  {Surface};
+\node[left=2pt of d,text width=1cm]  {Inverse};
+
+\node[above=18pt of m.north] (firm b) {Speaker};
+\node[left=1.6cm of m.west,rotate=90,align=center,anchor=center] {Hearer};
+
+%\node[above=5pt of firm b]  {If Nature chooses $\forall>\exists$ in a scrambling langugae};
+\end{tikzpicture}
+\caption{If Nature selects $\forall>\exists$ in a scrambling language\label{2s1}}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+
+\matrix[matrix of math nodes,every odd row/.style={align=right},every even row/.style={align=left},every node/.style={text width=1.5cm},row sep=0.2cm,column sep=0.2cm] (m) {
+$0$&$c$\\
+$0$&$c$\\
+$c-i$&$-i$\\
+$c-i$&$-i$\\
+};
+\draw (m.north east) rectangle (m.south west);
+\draw (m.north) -- (m.south);
+\draw (m.east) -- (m.west);
+
+\coordinate (a) at ($(m.north west)!0.25!(m.north east)$);
+\coordinate (b) at ($(m.north west)!0.75!(m.north east)$);
+\node[above=5pt of a,anchor=base] {Active};
+\node[above=5pt of b,anchor=base] {Scramble};
+
+\coordinate (c) at ($(m.north west)!0.25!(m.south west)$);
+\coordinate (d) at ($(m.north west)!0.75!(m.south west)$);
+\node[left=2pt of c,text width=1cm]  {Surface};
+\node[left=2pt of d,text width=1cm]  {Inverse};
+
+\node[above=18pt of m.north] (firm b) {Speaker};
+\node[left=1.6cm of m.west,rotate=90,align=center,anchor=center] {Hearer};
+
+%\node[above=5pt of firm b]  {If Nature chooses $\forall>\exists$};
+\end{tikzpicture}
+\caption{If Nature selects $\exists>\forall$ in a scrambling language\label{2s2}}
 \end{figure}
 
 Specifically, independent of the Speaker and Nature's choices, the Hearer will want to avoid choosing the \emph{Inverse} strategy.
@@ -694,18 +782,6 @@ Interestingly enough, the scope possibilities in Chinese in normal clauses and t
 On a philological note, it might be that languages with free word-order like Chinese probably use transformations less than rigid word-order languages like English specifically because they are unnecessary for scope. Those transformations they do use, like \emph{bei} passives, may tend to have extra semantic value lest they be ``worthless.''
 
 
-\begin{figure}
-\begin{tabular}{ll}
-	Rigid Constructions & Flexible Constructions \\\hline\hline
-	English main clauses & Main clauses in scrambling languages \\
-	Persian negation & Chinese negation \\
-	Typical English negation & English negation around auxes \\
-	Chinese passives & English passives*\\
-	\textbf{All of these are ambiguous} & \textbf{All of these are non-ambiguous}\\
-\end{tabular}
-	\caption{Empirical generalizations: Rigidity ${\rightarrow}$ Ambiguity}
-\end{figure}
-
 \section{Theoretical Issues Solved and Opened}
 
 \subsection{The Gambit of Linear Order}
@@ -743,55 +819,6 @@ Note \emph{also} that if we imagine (\ref{anap}) in a discourse environment, we'
 I do \emph{not} consider this a contradiction, but evidence in favor of the wider point.
 Scope ambiguities are trimmed away by pragmatic factors. In (\ref{anap}), it is world knowledge, in most of the other examples here, it's economy of derivation.
 
-\section{Towards a general, Game Theoretic theory of quantifier scope}
-
-Our empirical domain established here is quite robust in the data problems we've addressed here.
-Specifically, we can
-
-\subsection{Universal vs. existential quantifiers}
-
-There have been Game Theoretic accounts to address these problems, notably in \textcite{clark12}.
-Clark models the difference between universal and existential scopes as being an abstract game between falsifier and verifier algorithms.
-The scopal differences between universal and existential quantifiers come about from how these two ``players'' procede to attempt to find a contradiction or vindication of the truth of a sentence in a Model Theoretic framework.
-
-To editorialize baselessly, I'm suspcious of the use of Game Theory to describe abstract ``actors'' without there being a plausible 
-
-\subsection{$some$ vs. $a$ vs. $one$; and other scope preferences}
-
-Another domain on which our current theory here is insolvent or at least agnostic is the generally acknowledged tendency for some quantifiers to prefer to take higher or lower scope. Take the pair of sentences below.
-
-\begin{exe}
-	\ex \begin{xlist}
-	\ex Every girl loves a man.
-	\ex Every girl loves some man.\label{lessamb}
-	\end{xlist}
-\end{exe}
-
-Either of these sentences can be interpreted as being ambiguous (${\forall}>{\exists}$ or ${\exists}>{\forall}$), but (\ref{lessamb}) with the quantifier $some$ seems to predispose one to be somewhat closer to the ${\exists}>{\forall}$ interpretation, where every girl loves one particular man, say, Billy.
-
-We can see a similar effect with universal quantifiers:
-
-\begin{exe}
-	\ex \begin{xlist}
-		\ex Three postmen visited each house.\label{post1}
-		\ex Three postmen visisted every house.\label{post2}
-	\end{xlist}
-\end{exe}
-
-(\ref{post1}) seems to prefer the (${\exists}>3$) interpretation where at every house there were three, possibly different postmen.
-(\ref{post1}) prefers the reading ($3>{\exists}$) where exactly three postment went to every single house.
-
-While the account I have built here does quite well to predict the effects of transformations and scrambling on scope interpretations, as well as predicting typological facts, I do not think these narrow differences between the tendencies of particular quantifiers can be capturedin our current formalism.
-
-However, an Evolutionary Game Theory account could do so quite well.
-In fact, an an evolutionary account could also answer the general question of why languages indeed do have ``synonymous'' quantifiers in the first place.
-
-Specifically, given what we've modeled here, ambiguity is still a sizeable problem for communication's sake.
-To disambiguate sentences which maintain ambiguity, language systems gradually evolve a meta-game or, really \emph{conventions} as to particular quantifiers having particular scope readings.
-
-That is, in English, for example, $some$ and $a$ may both be existential quantifiers, as $every$ and $each$ are both universal quantifiers, but over time, Schelling Points arise where particular quantifiers are conventionalized as prefering wide or narrow scope.
-In English, it seems that both $some$ and $each$ tend to prefer wide scope while $a$ and $every$ prefer narrow scope.
-
 \section{Closing}
 
 %Everyone believes that some person loves a dog.
@@ -804,6 +831,15 @@ Additionally, other factors of grammar, such as binding in the classical sense a
 
 
 
+\begin{figure}
+	\begin{tabular}{rl}
+		Abrv.& Strategy name\\
+		A & \textbf{A}ctive Voice (Speaker)\\
+		P & \textbf{P}assive Voice (Speaker)\\
+		S & Interpret \textbf{S}urface scope (Hearer)\\
+		I & Interpret \textbf{I}nverse scope (Hearer)\\
+	\end{tabular}
+\end{figure}
 
 
 
