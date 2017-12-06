@@ -48,8 +48,8 @@
 \begin{abstract}
 	Here I argue that the commonly (and uncommonly) known facts about the availability of quantifier scope interpretations fall out cleanly from communicative constraints which Speakers and Hearers tactically navigate to converge on the intended meaning of an utterance.
 	This allows a relatively complete and motivated theory of quantifier scope ambiguity wholly without the need to resort to syntactic structure \textit{per se} for the main data.
-	I model this theory game theoretically, in a game where speakers receive a payoff for successful communication, and decrements to payoffs for the use of marked constructions.
-	These assumptions are sufficient to account for classical scope ambiguity data, but also newly compiled data I present which argues that \emph{word order rigidity}, across languages and constructions is the cause of scope ambiguity.
+	I model this theory game theoretically \parencite{neumann44}, in an extensive game \parencite{hart92} where speakers receive a payoff for successful communication, and decrements to payoffs for the use of marked constructions.
+	These assumptions are sufficient to account for classical scope ambiguity data, but also newly compiled data I present which argues crucially that \emph{word order rigidity}, across languages and constructions is the cause of scope ambiguity.
 \end{abstract}
 
 %\section{Problems with syntactically-derived accounts of scope}
@@ -74,15 +74,50 @@
 
 \listoffigures
 
-\section{Need for a novel approach to scope}
+%\section{Need for a novel approach to scope}
 
-I've decided to add this section at the last minute. It will briefly overview some of the problems behind traditional generative attempts at modeling scope, chiefly:
 
-\begin{itemize}
-	\item The marked unsystaticity of scope as an indicator of syntactic phenomena, i.e. that there still isn't a commonly accepted metric for what scope effects syntactic movements, etc. should have.
-	\item The sensitivity of scope to linear order.
-	\item The ubiquitous ``Chomsky's Aphasia'' in scope judgments and non-categorical judgments.
-\end{itemize}
+%Here I will argue that an account of quantifier scope ambiguity as a produce or part of the syntactic engine is not necessarily, and these scope effects can be modeled as naturally falling out from several pragmatic assumptions.
+
+
+%The provenience of this account is based in some existential and empirical shortcomings with traditional accounts to scope phenomena.
+%Firstly, quantifier scope, while it sometimes seems to correlate with deeper syntactic traits, has some traits that make it markedly incompatible with rigorously Minimalist approach to syntax.
+%Chief among which is the f
+
+
+
+
+
+
+%I've decided to add this section at the last minute. It will briefly overview some of the problems behind traditional generative attempts at modeling scope, chiefly:
+
+%\begin{itemize}
+	%\item The marked unsystaticity of scope as an indicator of syntactic phenomena, i.e. that there still isn't a commonly accepted metric for what scope effects syntactic movements, etc. should have.
+	%\item The sensitivity of scope to linear order.
+	%\item The ubiquitous ``Chomsky's Aphasia'' in scope judgments and non-categorical judgments.
+%\end{itemize}
+
+\section{The Uniqueness of Quantifier Scope}
+
+Quantifier scope ambiguity is often treated as a syntactic phenomenon, or at least a syntactic \emph{epi}phenomenon, but it bears some fairly marked traits that make a complete theory of quantifier scope incompatible with a rigorous formal approach to syntax.
+
+Firstly, quantifier scope is known to be highly sensitive to linear order.
+This is a generalization true generally, but especially true of languages with free word order
+\parencite{karimi03,pafel04},
+however in a narrowly Minimal interpretation of language, the phonological representation of a sentence, including the linear order of words, \emph{should} be incidental, but in any case not a factor that contributes to or limits a sentence's meaning.
+
+At that, while it's very common for syntacticians to evoke scope judgments in arguments about syntactic features, there is no systematic metric for what syntactic operations trigger scope judgments or \textit{vice versa}.
+Refer to the literature ensuing after \textcite{han07}'s interesting study in which it was argued that Korean speakers internalize two different grammars (due to poverty of stimulus) and as such exhibit different quantifier scope judgments.
+One population of speakers allowed for an additional type of ambiguity that the other population consistently rebuffed.
+That said, the debate arose as to \emph{which} population was the one with the extra reading: did low verbs create ambiguity, or did verbs in T?
+While an empirical difference had been noticed, and formal tools existed to account for some distinction, the lack of systematic use of quantifier scope in syntactic theory makes references to scope only incidental.
+
+At that scope is simply empirically problematic if we assume it is an output of the syntax.
+While some sentences are acceptable and some clearly unacceptable, scopal readings are notoriously unclear, context-dependent and generally victims of whim.
+
+For these reasons, it's sensible to look at scope as a phenomenon conditioned not so much by syntax, but by pragmatics and context.
+This is my goal.
+Using Game Theory \parencite{neumann44,hart92} I will attempt to craft a model of what communicative factors are sufficient to account for different possible quantifier scope readings.
 
 \section{Assumptions\label{assump}}
 
@@ -96,15 +131,20 @@ We will see that much of the diversity of scope can be accounted for merely taki
 \item ``Scrambling'' in languages which exhibit it, is not similarly costly.
 \end{enumerate}
 
-Before explaning the model, it's at least worth justifying all three of these on functional grounds.
+Before explaining the model, it's at least worth justifying all three of these on functional grounds.
+These are simply \textit{just so} justifications of these assumptions, none of which are fundamental to our argument here.
+It is not important \emph{why} these assumptions are true, only that they are decent priors for our model here.
 
 \subsection{Preference for Surface Scope}
 
-<++>
+As noted above, languages have a general preference for surface scope interpretation, meaning that \textit{ceteris paribus}, if there are two quantifiers in a sentence, the first will tend to scope over the other.
+This can be justified in various ways, but perhaps most sensible is the idea that sentences are processed more or less linearly, and as words are interpreted, the language faculty or cognition generally proceeds to generate a mental schema or image for the sentence (similar to the ideas in \textcite{langacker87}).
+
+A sentence with surface scope will make this process easier, as otherwise one would have to revise one's mental image when the truly wide scope is accessed later in the sentence.
 
 \subsection{Transformations are ``marked''}
 
-A longstanding assumption of transformational grammar was that those utterances which are ``transformed'' are in some ways, more marked or at least are derived from simplex expressions.
+With respect to transformations, a longstanding assumption of transformational grammar was that those utterances which are ``transformed'' are in some ways, more marked or at least are derived from simplex expressions.
 
 \begin{exe}
 	\ex\label{caes}
@@ -118,15 +158,17 @@ A longstanding assumption of transformational grammar was that those utterances 
 That is, while all sentences in (\ref{caes}) share a semantically equivalent kernel, (\ref{simp}) is in someway more basic than the cleft (\ref{celft}) or the passive (\ref{pass}).
 Earlier ideas in Generative Grammar assumed that this was because (\ref{celft}) and (\ref{pass}) were literally derived from (\ref{simp}), thus leading to the psycholinguistic thesis of the Derivational Theory of Complexity, hypothesizing that the latter two sentences were marked as they are later formations of the first.
 
-Theories such as this have fallen out of favor in mainstream Generative Grammar, but regardless, data from acquisition does indeed show that sentences such as (\ref{celft}) and (\ref{pass}) are acquired and employed at a distinctly later stage of language development.
-For our purposes, we could say something as simple as (\ref{cleft}) and (\ref{pass}) simply contain more morphemes or words than (\ref{simp}).
+While theories such as this have fallen out of favor in mainstream Generative Grammar, data from acquisition does indeed show that sentences such as (\ref{celft}) and (\ref{pass}) are acquired and employed at a distinctly later stage of language development.
+
+Still, for our purposes, we could say something as simple as (\ref{celft}) and (\ref{pass}) simply contain more morphemes or words than (\ref{simp}).
 We should be clear that the particular nature of the cost of ``transformations'' isn't important for us, only the general assumption that they are marked or dispreferrable.
 
 
-\subsection{Scrambling is not costly}
+\subsection{Scrambling is not costly\label{scrambcost}}
 
 This may fall out for free depending on one's account of the costliness of transformations.
 For example, if we say that the passive is generally disprefered because it consists in adding additional morphemes and words to a clause, we implicitly say that scrambled sentences, since they require no additional morphology or periphrasis, are not similarly costly.
+One could make similar arguements based on frequency of construction or other discourse factors.
 
 \section{Basic English Data and Passives\label{eng}}
 
@@ -171,7 +213,7 @@ The important fact here is merely that English passives, without other context s
 
 \section{Model}
 
-Additionally, it's important to be clear about the game theoretics of communication.
+It's important to be clear about the game theoretics of communication.
 Resolving scope ambiguities like that in (\ref{first}) is a kind of coordination game with imperfect information.
 That is, two interlocutors must converge on the same interpretation of a sentence which has been decided by circumstance;
 the Speaker knows the required interpretation and in speaking attempts to signal it to the Hearer.
@@ -197,17 +239,16 @@ If the speaker intends for a universal quantifier, such as \emph{every}, to scop
 \end{figure}
 
 To be more specific, we can say this is a kind of 3-player coordination game (where the sequence is indicated in Figure \ref{seq}).
-Player 0, who we can term \textbf{Nature} dictates what the needed scope interpretation should be, that is, whether, based on circumstances, a subject quantifier must scope over an object quantifier, or \emph{vice versa} or any other combination of quantificational elements.
-\footnote{We will only be including subject and object quantification for sake of simplicity to outline some general principles.}
+The non-human Player 0, who we can term \textbf{Nature} dictates what the needed scope interpretation should be, that is, whether, based on circumstances, a subject quantifier must scope over an object quantifier, or \emph{vice versa} or any other combination of quantificational elements.\footnote{We will only be including subject and object quantification for sake of simplicity to outline some general principles.}
+Nature represents the needed discourse environment which neither the Speaker or Hearer determines themselves.
 We can think of the choice of Player 0, Nature, as a random or given element of the model.
 Player 1, \textbf{the Speaker}, knows what the needed scope given by Nature is, and has to encode a linguistic message to communicate it to Player 2: \textbf{the Hearer} who is ignorant of it (illustrated in Figure \ref{exten}).
-In each language, the Speaker might have different strategies usable to communicate this message, depending on the structure of a language.
-\footnote{Thus, our intent here is not to argue how or why a given sentence in a language is grammatical or acceptable, but why Speakers choose to use a given sentence to communicate a particular scope reading.}
+In each language, the Speaker might have different strategies usable to communicate this message, depending on the structure of a language.\footnote{Thus, our intent here is not to argue how or why a given sentence in a language is grammatical or acceptable, but why Speakers choose to use a given sentence to communicate a particular scope reading.}
 
 If the Hearer's interpreted scope and the scope selected by Nature match, both human players get a payoff (represented as $c$ for \emph{\textbf{c}ommunication}), while if they do not match, there has been a miscommunication and this there is no payoff.
 Similarly, we can formalize our assumptions in the Section \ref{assump}.
 If transformations, specifically passives, are costly or dispreferred in some way, we can model them as saying that they reduce the payoff to the speaker to some degree (designated by $-p$).
-Similarly, instances of free word order and so-called ``scrambling'' do \emph{not} reduce any payoff.
+Similarly, instances of free word order and so-called ``scrambling'' do \emph{not} reduce any payoff; this will be addressed in Section \ref{scramb}.
 Lastly, surface scope should be universally preferred, so in situations where a speaker and hearer settle on an \emph{inverse} scope reading of a sentence, their payoffs are reduced by some degree (symbolized by $-i$).
 
 We should also assume that $c > (p + i)$, meaning that it is always preferable for the two interlocutors to understand each other even if transformations and inverse scope may dig into that payoff.
@@ -220,8 +261,8 @@ Given the constraints posited above, we will assume that surface scope is the id
 
 \subsection{The Game Theoretic Core}
 
-Regardless, given our constraints above, we can derive these facts of the difference between actives and passives from the interaction of strategic interpretation on the part of the two interlocutors.
-Assume the three player game above (of Nature, a Speaker and a Hearer), dealing with the kernel sentence in (\ref{sent}) ``Everyone loves someone,'' depicted in the decision tree in Figure \ref{tree}.
+Now, given our constraints and model above, we can derive these facts of the difference between actives and passives from the interaction of strategic interpretation on the part of the two interlocutors.
+Assume the three player game above (of Nature, a Speaker and a Hearer), dealing with the kernel sentence in (\ref{sent}) ``Everyone loves someone,'' depicted in the decision tree in Figure \ref{exten}.
 
 First, the Nature player determines whether the intended scope of the utterance should be where the universal quantifier takes wide scope ($\forall>\exists$, or $Sub > Obj$) or where the existential does ($\exists>\forall$, or $Obj > Sub$).
 Then the Speaker, aware of Nature's choice, takes his turn choosing either to word the sentence as the active ``Everyone loves someone'' or the passive ``Someone is loved by everyone''.
@@ -242,6 +283,7 @@ Lastly, if the dispreferred inverse scope has to be employed, both speakers will
 		$Sub > Obj$ & Demand the subject scope over the object (Nature)\\
 		$Obj > Sub$ & Demand the object scope over the subject (Nature)\\
 	\end{tabular}
+	\caption{The strategies for each player and their abbreviations}
 \end{figure}
 
 
@@ -342,13 +384,13 @@ The dotted lines represent the equivalence classes for the Hearer. That is, they
 \end{figure}
 
 
-Since this decision tree involves three players with substantive choices, it helps to narrow down the decision to find Nash Equilibria or optimal strategies.
+Since this decision tree involves three players with substantive choices, it helps to narrow down the decision to find Nash Equilibria, Schelling Points or notable strategies.
 Let's put ourselves in the position of the Hearer.
 The Hearer is the one dealing with the informational asymmetry guessing the choice of Nature given the Speaker's utterance.
-Given the aforementioned decision tree in Figure \ref{exten}, the Hearer can make two hypotheses about Nature, that it chose to demand that the subject $\forall$ scope over the object $\exists$, which is represented in Figure \ref{all}, or that it demands that the object $\exists$ should scope over the subject $\forall$.
+Given the aforementioned decision tree in Figure \ref{exten}, the Hearer can make two hypotheses about Nature, that it chose to demand that the subject/agent scope over the object/patient, or that it demands that the object should scope over the subject.
 
 The key to the strategy is the cost of the passive $p$.
-Let's take the situation when Nature selects ${\forall}>{\exists}$.
+Let's take the situation when Nature selects $Sub>Obj$.
 In that case, the hypothetical active form ``Everybody loves someone'' already has the correct surface scope order.
 While it is not immediately sure that the Hearer would determine that this active clause is indeed the required order, it costs the Speaker neither decrements of $p$ or $i$.
 
@@ -365,7 +407,7 @@ If the Speaker were to passivize the sentence to ``Someone is loved by everybody
 
 	\textbf{Signalling} -- When a player voluntarily undergoes a costs to communicate his tactics or strength. For example, a zebra, noticing a stalking lion may ``irrationally'' jump up and down in place instead of running to show his spriness and tell the lion he isn't an easy target.
 
-	\textbf{Nash Equilibrium} -- A point in a game where no player can improve his position by changing strategies given what he knows. While Nash Equilibria are usually the McGuffin of game theoretic analysis, our game has no proper Nash Equilibrium (not assuming iteration). The concept is usually attributed to \textcite{nash50} (hence the name), but was originally formulated at least in \textcite{cournot38}'s theory of economic duopoly.
+	\textbf{Nash Equilibrium} -- A point in a game where no player can improve his position by changing strategies given what he knows. While Nash Equilibria are usually the MacGuffin of game theoretic analysis, our game has no proper Nash Equilibrium (not assuming iteration). The concept is usually attributed to \textcite{nash50} (hence the name), but was originally formulated at least in \textcite{cournot38}'s theory of economic duopoly.
 
 	\textbf{Schelling Point} -- Sometimes called a \textit{Focal Point}. A point which is not a Nash Equilibrium, but due to some meta-game reasoning is a particularly marked. Originally formulated in \textcite{schelling60}.
 
@@ -374,10 +416,10 @@ If the Speaker were to passivize the sentence to ``Someone is loved by everybody
 \end{figure}
 
 The Speaker therefore is in a position of two theoretically uncertain outcomes, one that can yield him $c$, while the other can yield him only $c-p-i$.
-All things considered, $c$ is preferrable, and therefore using the active sentence to express ${\forall}>{\exists}$ should be preferrable.
+All things considered, $c$ is preferable, and therefore using the active sentence to express $Sub>Obj$ should be preferable.
 While this is not a proper Nash Equilibrium, since we are dealing with a non-simultaenous game, this decision can act as a \emph{signal} to the second player, the Hearer.
 
-The Hearer, knowing that there is this Schelling Point for choosing the active sentence when given ${\forall}>{\exists}$ can therefore conclude by deduction that if the Speaker for some reason chooses to word his sentence in the passive, it is nearly certain that Nature meant \emph{the other} alternative: ${\exists}>{\forall}$.
+The Hearer, knowing that there is this Schelling Point for choosing the active sentence when given ${Sub}>{Obj}$ can therefore conclude by deduction that if the Speaker for some reason chooses to word his sentence in the passive, it is nearly certain that Nature meant \emph{the other} alternative: ${Obj}>{Sub}$.
 Or put more generally in (\ref{cost}).
 
 \begin{exe}
@@ -398,24 +440,28 @@ To put it in more intuitive terms, if the subject does something costly like pas
 Passivizing only to also lose $i$ is not a good Schelling Point strategy.
 For this reason, in most pragmatic circumstances, passivized sentences appear as unambiguous, seeing that we conclude that they are motivated to avoid the cost of the inverse scope.
 
-In the situation where Nature chooses ${\exists}>{\forall}$, the situation is less clear.
-This is because the Speaker has two possible winning payoffs: $c-i$ and $c-p$, neither of which is necessarily preferrable since we have not established whether $p>i$, nor do I think one is always larger than the other.
+In the situation where Nature chooses ${Obj}>{Sub}$, the situation is less clear.
+This is because the Speaker has two possible winning payoffs: $c-i$ and $c-p$, neither of which is necessarily preferable since we have not established whether $p>i$, nor do I think one is always larger than the other.
 In this situation, a Speaker could passivize and to avoid inverse scope order, or bite the bullet and take inverse scope without the passivization, both with uncertainty.
-The end result is that the active sentence ``Everyone loves someone'' does not clearly communicate whether Nature choose ${\forall}>{\exists}$ or ${\exists}>{\forall}$ since there is no obvious Schelling Point to rule out one of the strategies. Therfore, while the English passive is unambiguous due to the presence of a Schelling Point, the English active is not.
+The end result is that the active sentence ``Everyone loves someone'' does not clearly communicate whether Nature choose ${Sub}>{Obj}$ or ${Obj}>{Sub}$ since there is no obvious Schelling Point to rule out one of the strategies.
+Therefore, while the English passive is unambiguous due to the presence of a Schelling Point, the English active is not.
 
 \subsection{Scrambling\label{scramb}}
 
-But how should scope ambiguities work where there are ``costless'' ways of reordering quantified nominals? Scrambling languages present ways of reordering nominals without a marked transformation. In our model, Speakers in languages like this, such as German, Persian, Korean and Japanese, have access to another strategy aside from producing an active or passive clause. They may also \emph{scramble} the object such that it appears to the left of the subject.
+But how should scope ambiguities work where there are ``costless'' ways of reordering quantified nominals?
+Scrambling languages present ways of reordering nominals without a marked transformation, as we have assumed in Section \ref{scrambcost}.
+In our model, Speakers in languages like this, such as German, Persian, Korean and Japanese, have access to another strategy aside from producing an active or passive clause. They may also \emph{scramble} the object such that it appears to the left of the subject.
 
 First a theoretical note.
 The ``scrambling'' tendencies of each of these languages may be different: German ``scrambling'' is quite different syntactically than Korean's, etc.
 This is not so important to us here.
 We only need to know if there is a valid reordering strategy in a language which is not marked in the way that passives are.
-Why German or Perian or other languages vary with respect to syntactic flexibility is not germane for us here, only the \emph{effects} of these traits on scopal possibilities.
+Why German or Persian or other languages vary with respect to syntactic flexibility is not germane for us here, only the \emph{effects} of these traits on scopal possibilities.
+Our account here is not a theory of syntax, only of quantifier scope.
 
 \subsubsection{Scope in Scrambling Languages}
 
-First the empirical facts.
+First the empirical generalizations.
 German, a scrambling language shows a very different paradigm of scope availabilities than does English.
 Even in ``kernel'' sentences like (\ref{g}), surface scope is the only plausible interpretation.
 The same is true in the scrambled sentence (\ref{gs}), where the object has been scrambled left of the subject.
@@ -423,10 +469,10 @@ The same is true in the scrambled sentence (\ref{gs}), where the object has been
 \begin{exe}
 \ex{\gll dass eine Frau jeden liebt\\
 that a woman everybody loves\\
-\trans{``\ldots that everyone loves a woman\label{g}''\hfill (some $>$ every; ??every $>$ some)}}
+\trans{``\ldots that some woman loves everyone\label{g}''\hfill (some $>$ every; ??every $>$ some)}}
 \ex{\gll dass jeden eine Frau liebt\\
 that everybody a woman loves\\
-\trans{``\ldots that everyone loves a woman\label{gs}'' \hfill (every $>$ some; ??some $>$ every)}}
+\trans{``\ldots that a woman loves everyone\label{gs}'' \hfill (every $>$ some; ??some $>$ every)}}
 \end{exe}
 
 This universal surface scope is well mirrored in other languages.
@@ -443,11 +489,29 @@ all book-IND a student read \\
 \trans{``A student read every book.''\hfill ($\forall > \exists$; *$\exists > \forall$)}}
 \end{xlist}\end{exe}
 
+This generalization about scope effects is fairly well-accepted with respect to scrambling languages, but it can also be shown to fall out from our already mentioned assumptions.
 
-\subsubsection{An Account of Scramblible Scope}
+\subsubsection{An Account of Scramblible Scope\label{scbad}}
 
-In our game theoretic framework, we can say that the \emph{Scramble} strategy, which consists of moving the object left of the subject, achieves the linear order of passivization without the cost of $p$ to the Speaker.
-	Because of this, \emph{Scramble} in a scrambling language is always preferable to the dominated strategy \emph{Passive} for the Speaker.
+In our game theoretic framework, we can say that the \emph{Scramble} strategy, which consists of moving the object left of the subject, achieves the linear order of passivization without the cost of $p$ to the Speaker (Section \ref{scrambcost}).
+	Because of this, \emph{Scramble} in a scrambling language is always preferable to the dominated strategy \emph{Passive} for the Speaker; the payoffs are shown in Figure \ref{dom}.
+	Therefore, a rational Speaker need not consider \textit{Passive} as an option for achieving the correct scope interpretation if the alternative strategy \textit{Scramble} is available.
+	We will discuss some typological implications of this in Section \ref{passscr}.
+
+\begin{figure}
+	\begin{shaded}
+\begin{center}
+\begin{tabular}{r|cccc}
+	&$Sub, S$ & $Sub, I$ & $Obj, S$ & $Obj, I$ \\\hline\hline
+Active & $c$  & $-i$ & $0$  & $c-i$ \\
+	\sout{Passive} & $-p$ & $c-p-i$  & $c-p$  & $-p-i$  \\
+Scramble & $0$  & $c-i$ & $c$  & $-i$  \\
+\end{tabular}
+\end{center}
+\small For every pair of decisions made by other speakers, each payoff for the Speaker is greater if he chooses $Scramble$ than if he chooses $Passive$, due to the $-p$ penalty.
+		\caption{$Scramble$ dominates $Passive$ as a strategy for Speaker\label{dom}}
+	\end{shaded}
+\end{figure}
 
 \begin{figure}
 \begin{center}
@@ -534,28 +598,13 @@ In our game theoretic framework, we can say that the \emph{Scramble} strategy, w
 \caption{The extensive game\label{trees} in a scrambling language}
 \end{figure}
 
-Thus if we disregard the possibility of passivization as dispreferred as a scope technique, once again, both human players have two possible choices.
-Once again, we can again simplify the decision tree into two two-dimensional grids given the two different possible choices of the Nature player.
+Thus if we disregard the possibility of passivization as disprefered as a scope technique, once again, both human players have two possible choices.
 We should see that there is no straight-forward dominant strategy for either player, but a very obvious signalling opportunity arises in the meta-game, or a Schelling Point.
 
-\begin{figure}
-	\begin{shaded}
-\begin{center}
-\begin{tabular}{r|cccc}
-	&$Sub, S$ & $Sub, I$ & $Obj, S$ & $Obj, I$ \\\hline\hline
-Active & $c$  & $-i$ & $0$  & $c-i$ \\
-	\sout{Passive} & $-p$ & $c-p-i$  & $c-p$  & $-p-i$  \\
-Scramble & $0$  & $c-i$ & $c$  & $-i$  \\
-\end{tabular}
-\end{center}
-\small For every pair of decisions made by other speakers, each payoff for the Speaker is greater if he chooses $Scramble$ than if he chooses $Passive$, due to the $-p$ penalty.
-	\caption{$Scramble$ dominates $Passive$ as a strategy for Speaker}
-	\end{shaded}
-\end{figure}
-
 Specifically, independent of the Speaker and Nature's choices, the Hearer will want to avoid choosing the \emph{Inverse} strategy.
-The Speaker realizes this and can strategically select his strategy based on what will require the Hearer to \emph{not} select the \emph{Inverse} strategy.
-This acts as a signal to the Hearer.
+Given there is no Nash Equilibrium in the simple game, there is no clear dominant strategy for the Speaker, but even if a Hearer interprets his behavior as totally random, choosing the \emph{Surface} strategy increases the average payoff for the Hearer.
+The Speaker realizes this (and shares the desire to avoid $-i$) and can strategically select his strategy based on what will require the Hearer to \emph{not} select the \emph{Inverse} strategy.
+This acts as a signal to the Hearer, or more generally a positioning strategy to move the Hearer in to a place to get the best mutual payoff of $c$.
 
 In the meta-game, the Speaker acts so that both players can be applicable for the highest possible payoff of $c$.
 And a Hearer totally blind to the Speaker's actions should have a bias to the \emph{Surface} scope interpretation strategy.
@@ -586,16 +635,16 @@ This is because hearers can say, ``Ah, that may just be the desired reading in s
 
 Now our initial assumptions have accounted for much variation between different languages, but there is scopal differences \emph{inside} of languages between different constructions that is worth outlining and accounting for in this novel way.
 
-\subsection{Intra- vs. Inter-language variation}
+\section{The Generalization Applied}
 
 In the Generative Program, part of the common idea of quantifier scope differences between languages has been that there are parametric differences between languages that not only cause syntactic differences, but also these scopal differences.
 
-One language, due to a scopal paramter, may have ubiquitous ambiguity due to some parameter setting affecting ``Logical Form'', one might have the reverse.
+One language, due to a syntactic paramter, may have ubiquitous ambiguity due to some parameter setting affecting ``Logical Form'', one might have the reverse.
 
 I'll argue that this conception is untenable, not just because of the better account we can get from this type of game theoretic and pragmatic model, but also because there are many examples of ``local rigidity'' which, in the same way that English syntactic rigidity produces ambiguity, produce ambiguity only in particular constructions in languages.
 Quantifier scope availability, therefore, \emph{cannot} be a language parameter setting, and must be grounded in the very specific context of a construction, as I will show our theory here is.
 
-\subsubsection{Flexibility of Negation}
+\subsection{Flexibility of Negation}
 
 We can take the generalization in (\ref{gen}) and compare it to the flexibility or rigidity of non-nominal quantificational elements as well.
 
@@ -625,13 +674,14 @@ Now that is the situation of modal and negation scope with one non-main verb. Ho
 \end{exe}
 
 Notice as there is flexibility of negation position with non-modal auxiliaries in English, neither (\ref{could not}) nor (\ref{have not}) are ambiguous. In (\ref{could not}), we express the fact that Billy was unable to go before our arrival. In (\ref{have not}), we express the possibility Billy was able to \emph{not} go, but in a world where Billy did go, (\ref{have not}) may still be true.
+No one would utter (\ref{have not}) to mean that the negation takes wider scope when (\ref{could not}), which places the negation more leftward, is a possible alternative.
 
 %Real world knowledge JR
 
 Thus even in a single language our generalization holds.
 Syntactic rigidity allows for ambiguity, while free flexibility creates situations where ambiguity is ruled out due to the assumption that speakers have that surface scope is universally preferred.
 
-This is not just true from language to language or construction to construction, but in English, even when specifically addressing negation, \emph{any} higly local syntactic rigidity causes ambiguity and \emph{any} highly local syntactic flexibility disambiguates.
+This is not just true from language to language or construction to construction, but in English, even when specifically addressing negation, \emph{any} highly local syntactic rigidity causes ambiguity and \emph{any} highly local syntactic flexibility disambiguates.
 
 And as expected, languages that can syntactically bear negation before all modals/verbs, such as Chinese do not create the ambiguity in the rigid English example \parencite{ernst98}.
 
@@ -667,8 +717,9 @@ B. to all city-IND not-went.\\
 }
 \end{exe}
 
+Thus Persian movement verbs, which are uniquely more syntactically mobile show precisely the same scopal effects we predict they should.
 
-\subsubsection{Construction-specific Rigidity}
+\subsection{Construction-specific Rigidity}
 
 Since my statement here is that scope ambiguity is merely the result of linear rigidity in syntax, not of some language-wide parameter, we should see the unambiguous surface scope of scrambling languages disappear in particular constructions where normally scramblible nominals are tied in position.
 
@@ -678,21 +729,23 @@ Chinese, usually a very stablely scrambling or discourse configurational languag
 \ex \begin{xlist}\label{chin}
 \ex[]{\gll Meigeren dou zhuazou yige {n\"uren}.\\
 everyone all arrest a woman\\
-\trans{``Everyone arrested a woman.''\label{chin1}}
+	\trans{``Everyone arrested a woman.''\label{chin1}} \hfill (${\forall}>{\exists}; *{\exists}>{\forall}$)
 }
 \ex[]{\gll (You) yige {n\"uren} meigeren dou zhuazou.\\
 (have) a woman everyone all arrest.\\
-\trans{``A woman was arrested by everyone.''\label{chin2}}
+	\trans{``A woman was arrested by everyone.''\label{chin2}} \hfill (${\exists}>{\forall}; *{\forall}>{\exists}$)
 }\end{xlist}
 \end{exe}
 
-However Chinese \emph{bei} pseudo-passives require a particular word order. The semantic object is promoted as the initial nominal, while the agent follows the preverbal co-verb ``bei'' as shown in (\ref{chin3}). As (\ref{chin4}) shows, however, the quasi-prepositional \emph{bei} $+$ \emph{agent} constituent may not be fronted or topicalized.
+However Chinese \emph{bei} pseudo-passives require a particular word order.
+They are rigid.
+The semantic object is promoted as the initial nominal, while the agent follows the preverbal co-verb ``bei'' as shown in (\ref{chin3}). As (\ref{chin4}) shows, however, the quasi-prepositional \emph{bei} $+$ \emph{agent} constituent may not be fronted or topicalized.
 
 \begin{exe}
-\ex{ \begin{xlist}
+	\ex{ \begin{xlist}\label{beis}
 \ex[]{\gll Meigeren dou bei yige {n\"uren} zhuazou.\\
 everyone all PASS a woman arrest\\
-\trans{``Everyone was arrested by a woman.''\label{chin3}}
+		\trans{``Everyone was arrested by a woman.''\label{chin3}} \hfill (${\forall}>{\exists}; {\exists}>{\forall}$)
 }
 \ex[*]{Bei yige {n\"uren} meigeren dou zhuazou.\\
 PASS a woman everyone all arrest\\
@@ -702,10 +755,14 @@ PASS a woman everyone all arrest\\
 
 The scopal possibilities follow the predictions perfectly. Since flexible word order is unavailable, (\ref{chin3}) is ambiguous: there can either be one woman arresting everyone, or each person can be arrested by a different woman.
 
-Interestingly enough, the scope possibilities in Chinese in normal clauses and the \emph{bei} pseudo-passive are precisely the opposite of English, again this falls out from the fact that nominal movement is generally free in Chinese (meaning unambiguous sentences normally) and the additional fact that \emph{bei} passives are not precisely equivalent to their active counterparts, but add additional meaning.\footnote{\emph{Bei} passives imply some kind of misfortune or negativity. Thus (\ref{chin3}) could be translated as ``Everyone befell arresting by a woman'' or something of the sort.}
+The intuitions of our game theoretic model in essense propose that (\ref{chin3}) is an ambiguous sentence because its alternative sentence (\ref{chin4}) is not available.
+On the other hand, because (\ref{chin1}) \emph{does} have a sensible counterpart (\ref{chin2}) with a different scope order \emph{there is no reason for it to be ambiguous}.
 
-On a philological note, it might be that languages with free word-order like Chinese probably use transformations less than rigid word-order languages like English specifically because they are unnecessary for scope. Those transformations they do use, like \emph{bei} passives, may tend to have extra semantic value lest they be ``worthless.''
+Interestingly enough, the scope possibilities in Chinese in normal clauses and the \emph{bei} pseudo-passive are precisely the opposite of English, again this falls out from the fact that nominal movement is generally free in Chinese (meaning unambiguous sentences normally) and the additional fact that \emph{bei} passives are not precisely equivalent to their active counterparts, but add additional meaning.
+We will discuss this in the next subsection.
 
+For now it should be noted that the data we've covered from a variety of languages move lockstep together: syntactically rigid constructions exhibit quantifier scope ambiguity, while syntactically flexible constructions do not.
+This is not a generalization about the differences between languages, but \emph{inside} languages as well.
 
 \begin{figure}
 \begin{tabular}{ll}
@@ -718,6 +775,35 @@ On a philological note, it might be that languages with free word-order like Chi
 \end{tabular}
 	\caption{Empirical generalizations: Rigidity ${\rightarrow}$ Ambiguity}
 \end{figure}
+
+An approach to scope based in traditional syntax would be able account for the differences \emph{between} languages, saying that the different scope interpretations are built into different syntactic parameters, but as we've shown here, there are scope distinctions \emph{between individual constructions} within a language.
+
+This along with the fact that each of these differences correlate so well syntactic rigidity or flexibility point to a deeper relationship between scope and syntactic flexibility, a relationship which we have modeled causally above.
+
+
+\subsection{Why passivize when you can scramble?\label{passscr}}
+
+We noted in Section \ref{scbad} that our formal analysis treats the Speaker strategy \textit{Passive} strategy as a \emph{dominated strategy} to \textit{Scramble} in languages where \textit{Scramble} is available.
+A decent question for asking is, given our theory, \emph{why indeed} should there exist a passive is one can easily scramble words to a more desired position? Should typical passives exist at all in ``scrambling'' languages?
+
+First, it's worth saying that this analysis only predicts that scrambling is a superior strategy over passivization for the simple purpose of engineering surface scope order.
+There may indeed be other reasons to use a passive in language.
+
+That said, I think there is a case to be made that indeed scrambling languages rely less on passivization and other transformations.
+Or at least, in scrambling languages where passives exist, passives find a distinct semantic or pragmatic niche.
+
+Take the earlier example of Chinese, a scrambling language\footnote{Or at least a discourse-configurational language. Regardless, a language with relatively free word order.}.
+Chinese indeed have a construction sometimes called a ``passive'', and that is the \textit{bei} construction we mentioned in example (\ref{beis}).
+Like English passives, Chinese passives promote the object and demote the subject for a different argument structure schema, and a different order.
+
+However, while the two constructions are similar in form, the Chinese passive has an added meaning: they imply that the action the patient is undergoing is particularly undesired or unfortunate.
+That is, while the examples in (\ref{beis}) show the word for ``arrest'', it would be extremely strange to replace that with a non-negative word such as ``praise'', etc.
+
+While it is not out objective here, it could certainly be argued that while passives may not be the best strategies for getting a desired scope order, these constructions may be put to other purposes or develop special meanings in circumstance.
+This could feasibly be done in evolutionary game theory, but that is beyond our purview here.
+
+Still, implicitly, with the approach to language developed here, languages are bundles of communicative strategies employed for communication.
+
 
 \section{Theoretical Issues Solved and Opened}
 
@@ -751,27 +837,44 @@ This makes the otherwise disfavored $\forall>\exists$ interpretation the only lo
 \ex Some of an apple was eaten by every boy. \hfill ($\exists>\forall$, $\forall>\exists$)\label{jig}
 \end{exe}
 
-Note \emph{also} that if we imagine (\ref{anap}) in a discourse environment, we're most likely to think of constrastive focus or something else: ``An apple was eaten by every boy, a banana by every woman, a pineapple by every man\ldots'' 
+Note \emph{also} that if we imagine (\ref{anap}) in a discourse environment, we're most likely to think of contrastive focus or something else: ``An apple was eaten by every boy, a banana by every woman, a pineapple by every man\ldots'' 
 
 I do \emph{not} consider this a contradiction, but evidence in favor of the wider point.
 Scope ambiguities are trimmed away by pragmatic factors. In (\ref{anap}), it is world knowledge, in most of the other examples here, it's economy of derivation.
 
 \section{Towards a general, game theoretic theory of quantifier scope}
 
-Our empirical domain established here is quite robust in the data problems we've addressed here.
-Specifically, we can
+Our empirical domain established here is quite robust in the data problems we've addressed.
+Specifically, we can make predictions about what kinds of languages and constructions make ambiguous scope readings available based on independent factors.
+We have looked a number of constructions in a number of languages, but the theory would predict these generalizations will continue to be vindicated.
+
+Our game theoretic model accounts fairly well for these scopal differences motivated by the availability of different strategies.
+I think that this model can be refined substantially in the future, and I plan to do so, but there's some sense in which the intuition is fundamentally ``correct''.
+
+That said, there are some domains of scope which I have not endeavored to account for due to the more focused scope of the my data here.
+Two of these domains are the most prominent:
+
+\begin{enumerate}
+	\item The scope differences between universal and existential quantifiers.
+	\item The scope differences between particular quantifiers of the same ``type'', but generally taking different scope readings.
+\end{enumerate}
+
+It's worth discussing how these problems can be addressed, and how they can be integrated into a general theory of game theoretic quantifier scope we've begun here.
 
 \subsection{Universal vs. existential quantifiers}
 
 There have been game theoretic accounts to address these problems, notably in \textcite{clark12}.
 Clark models the difference between universal and existential scopes as being an abstract game between falsifier and verifier algorithms.
-The scopal differences between universal and existential quantifiers come about from how these two ``players'' procede to attempt to find a contradiction or vindication of the truth of a sentence in a Model Theoretic framework.
+The scopal differences between universal and existential quantifiers come about from how these two ``players'' proceed to attempt to find a contradiction or vindication of the truth of a sentence in a Model Theoretic framework.
 
-To editorialize baselessly, I'm suspcious of the use of game theory to describe abstract ``actors'' without there being a plausible 
+Based on the linear order of a sentence, we may find a proof or disproof of a sentence in a Model Theoretic world at different times for either existential or universal quantifiers.
+Clark's model, although a ``mere'' example in another more general argument, is simple and highly effective at disentangling the scopal tendencies of universal and existential quantifiers.
+
+There is a possibility of combining this approach with ours into a linearly processed incremental game, where the Hearer weeds out possible interpretations with world knowledge accounted for model theoretically, partially based on cognitive coherence \parencite{langacker87}.
 
 \subsection{$some$ vs. $a$ vs. $one$; and other scope preferences}
 
-Another domain on which our current theory here is insolvent or at least agnostic is the generally acknowledged tendency for some quantifiers to prefer to take higher or lower scope. Take the pair of sentences below.
+Another domain on which our current theory here is insolvent or at least agnostic is the generally acknowledged tendency for some quantifiers to prefer to take higher or lower scope \parencite{feiman16}. Take the pair of sentences below.
 
 \begin{exe}
 	\ex \begin{xlist}
@@ -787,27 +890,27 @@ We can see a similar effect with universal quantifiers:
 \begin{exe}
 	\ex \begin{xlist}
 		\ex Three postmen visited each house.\label{post1}
-		\ex Three postmen visisted every house.\label{post2}
+		\ex Three postmen visited every house.\label{post2}
 	\end{xlist}
 \end{exe}
 
 (\ref{post1}) seems to prefer the (${\exists}>3$) interpretation where at every house there were three, possibly different postmen.
-(\ref{post1}) prefers the reading ($3>{\exists}$) where exactly three postment went to every single house.
+(\ref{post1}) prefers the reading ($3>{\exists}$) where exactly three postmen went to every single house.
 
-While the account I have built here does quite well to predict the effects of transformations and scrambling on scope interpretations, as well as predicting typological facts, I do not think these narrow differences between the tendencies of particular quantifiers can be capturedin our current formalism.
+While the account I have built here does quite well to predict the effects of transformations and scrambling on scope interpretations, as well as predicting typological facts, I do not think these narrow differences between the tendencies of particular quantifiers can be captured in our current formalism.
 
-However, an Evolutionary game theory account could do so quite well.
-In fact, an an evolutionary account could also answer the general question of why languages indeed do have ``synonymous'' quantifiers in the first place.
+However, an evolutionary game theoretic account \parencite{maynardsmith73} could do so quite well.
+In fact, an evolutionary account could also answer the general question of why languages indeed do have ``synonymous'' quantifiers in the first place.
 
 Specifically, given what we've modeled here, ambiguity is still a sizeable problem for communication's sake.
 To disambiguate sentences which maintain ambiguity, language systems gradually evolve a meta-game or, really \emph{conventions} as to particular quantifiers having particular scope readings.
 
-That is, in English, for example, $some$ and $a$ may both be existential quantifiers, as $every$ and $each$ are both universal quantifiers, but over time, Schelling Points arise where particular quantifiers are conventionalized as prefering wide or narrow scope.
+That is, in English, for example, $some$ and $a$ may both be existential quantifiers, as $every$ and $each$ are both universal quantifiers, but over time, Schelling Points arise where particular quantifiers are conventionalized as preferring wide or narrow scope.
 In English, it seems that both $some$ and $each$ tend to prefer wide scope while $a$ and $every$ prefer narrow scope.
 
 \subsection{Empirical extensions}
 
-<++>
+Even more than formal modeling, I think that our generalization that syntactic rigidity produces scopal ambiguity is an sensible find that could probably be replicated on a much larger scale with many more constructions.
 
 \section{Closing}
 
@@ -815,14 +918,11 @@ In English, it seems that both $some$ and $each$ tend to prefer wide scope while
 
 In closing, much of the confusion about scope can be alleviated by understanding that scope availabilities are determined by pragmatic factors and implicatures that can be modelled game theoretically. We've seen here that the facts about the scope availabilities of most languages fall out quite effortlessly from assumptions about the cost of transformations, the costlessness of scrambling and the wider syntactic capacities of a language.
 
-I feel that much more work can be note to resolve questions in scope using pragmatic facts, particularly in the areas of telicity and world knowledge. Regardless, there seems to be decent circumstantial evidence to lend credence to the idea that scope is not a component of narrow syntax, but a set of extra-UG implicatures we make about language use.
+I feel that much more work can be note to resolve questions in scope using pragmatic facts, particularly in the areas of telicity and world knowledge.
+Additionally, the tools of game theory can prove extremely effective at accounting for scope and other quasi-pragmatic aspects of languages that have traditionally for better or for worse been modeled as parts of or outputs of the formal syntactic engine.
+Regardless, there seems to be good circumstantial evidence to lend credence to the idea that scope is not a component of narrow syntax, but a set of extra-UG implicatures we make about language use.
 
 Additionally, other factors of grammar, such as binding in the classical sense are in need of new life, once insurmountable problems were brought to traditional syntactic analyses of the data. It may be that these other factors, binding, negative polarity items and cross-over effects may actually be derivable on pragmatic grounds, and thus would eliminate such of the theoretical mess and greatly economize and minimize the core language faculty.
-
-
-
-
-
 
 \printbibliography
 
