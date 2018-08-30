@@ -63,7 +63,7 @@
 %\end{exe}
 
 %\begin{exe}
-	%\ex 
+	%\ex
 %\begin{dialogue}
 	%\speak{Speaker 1} Look at the target: it wasn't hit by your arrow!
 	%\speak{Speaker 2} The target wasn't hit by many of the arrows.
@@ -103,8 +103,9 @@ Quantifier scope ambiguity is often treated as a syntactic phenomenon, or at lea
 
 Firstly, quantifier scope is known to be highly sensitive to linear order.
 This is a generalization true generally, but especially true of languages with free word order
-\parencite{karimi03,pafel04},
-however in a narrowly Minimal interpretation of language, the phonological representation of a sentence, including the linear order of words, \emph{should} be incidental, but in any case not a factor that contributes to or limits a sentence's meaning.
+\parencite{pafel04}.
+\textcite[xix]{karimi03} in fact notes that one of the ``specific properties'' of scrambling languages is that ``scope is usually determined by surface (derived) positions of quantifiers.''
+However in a narrowly Minimal interpretation of language, the phonological representation of a sentence, including the linear order of words, \emph{should} be incidental, but in any case not a factor that contributes to or limits a sentence's meaning.
 
 At that, while it's very common for syntacticians to evoke scope judgments in arguments about syntactic features, there is no systematic metric for what syntactic operations trigger scope judgments or \textit{vice versa}.
 Refer to the literature ensuing after \textcite{han07}'s interesting study in which it was argued that Korean speakers internalize two different grammars (due to poverty of stimulus) and as such exhibit different quantifier scope judgments.
@@ -476,20 +477,37 @@ that everybody a woman loves\\
 \end{exe}
 
 This universal surface scope is well mirrored in other languages.
-\textcite{karimi03} notes that one of the principle differences between scrambling languages and ones with inflexible word order like English is the lack of ambiguity.
+To repeat, as \textcite{pafel04,karimi03} among others note, the general tendency is for scrambling languages
 We can see similar patterns in Persian in (\ref{pers}).
 
 \begin{exe}
-\ex\label{pers} \begin{xlist}
-\ex {\gll Yek d\=aneshju hame ket\=ab-i x\=and. \\
-a student all book-IND read \\
-\trans{``A student read every book.''\hfill ($\exists > \forall$; *$\forall > \exists$)}}
-\ex {\gll Hame ket\=ab-i yek d\=aneshju x\=and. \\
-all book-IND a student read \\
-\trans{``A student read every book.''\hfill ($\forall > \exists$; *$\exists > \forall$)}}
-\end{xlist}\end{exe}
+\ex \begin{xlist}
+\label{pers}
+\ex {\gll Har d\=aneshjui b\=ayad ye mas'ala-ro hal bo-kon-e. \\
+each student must a problem-r\=a solution SUBJ-do-3sg \\
+\trans{``Each student must solve a problem.'' \hfill $({\forall}>{\exists}, ??{\exists}>{\forall})$}}
+\ex {\gll Ye mas'ala-ro har d\=aneshjui bayad hal bo-kon-e. \\
+a problem-r\=a every student must solution SUB-do-3sg \\
+\trans{``There's a problem that every student must solve.'' \hfill $({\exists}>{\forall}, ?{\forall}>{\exists})$}}
+\end{xlist}
+\end{exe}
 
-This generalization about scope effects is fairly well-accepted with respect to scrambling languages, but it can also be shown to fall out from our already mentioned assumptions.
+It should be noted that \textcite{karimi03} treats the latter sentence as ambiguous, a judgment I could not replicate with my consultants in context.
+Still the different judgment cited in \textcite{karimi03} is understandable given that the surface scope order $({\exists} > {\forall})$ logically entails the other $({\forall} > {\exists})$, and the use of \emph{har} ``every'', a quantifier with strong pragmatic preference for ``wide scope''.
+We will discuss this as a more general tendency in section \ref{prefscope}.
+
+
+%\begin{exe}
+%\ex\label{pers} \begin{xlist}
+%\ex {\gll Yek d\=aneshjui hame ket\=ab-i-ro x\=and. \\
+%a student all book-IND read \\
+%\trans{``A student read every book.''\hfill ($\exists > \forall$; *$\forall > \exists$)}}
+%\ex {\gll Hame ket\=ab-i-ro yek d\=aneshjui x\=and. \\
+%all book-IND-ACC a student read \\
+%\trans{``A student read every book.''\hfill ($\forall > \exists$; *$\exists > \forall$)}}
+%\end{xlist}\end{exe}
+
+Regardless, this generalization about scope effects is fairly well-accepted with respect to scrambling languages, but it can also be shown to fall out from our already mentioned assumptions.
 
 \subsubsection{An Account of Scramblible Scope\label{scbad}}
 
@@ -653,7 +671,7 @@ English expresses sentential negation in the element \emph{not}. As a descriptiv
 On to the scopal facts. Notice first that an English sentence with one modal and one negation produce ambiguity.
 
 \begin{exe}
-\ex Billy can not go. \label{cannot}\hfill ($\neg >$ can; can $> \neg$) 
+\ex Billy can not go. \label{cannot}\hfill ($\neg >$ can; can $> \neg$)
 \end{exe}
 
 (\ref{cannot}) is ambiguous. Negation can take wide scope (which is inverse) such that Billy is \emph{unable} to go, or the modal can take wide (surface) scope, where Billy is able \emph{not} to go, if he so pleases.
@@ -683,10 +701,10 @@ Syntactic rigidity allows for ambiguity, while free flexibility creates situatio
 
 This is not just true from language to language or construction to construction, but in English, even when specifically addressing negation, \emph{any} highly local syntactic rigidity causes ambiguity and \emph{any} highly local syntactic flexibility disambiguates.
 
-And as expected, languages that can syntactically bear negation before all modals/verbs, such as Chinese do not create the ambiguity in the rigid English example \parencite{ernst98}.
+And as expected, languages that can syntactically bear negation before all modals/verbs, such as Chinese do not create the ambiguity in the rigid English example.
 
 \begin{exe}
-\ex{\gll Shujuan keyi bu gen Guorong {tiao wu}.\\
+\ex{\gll Shujuan keyi bu gen Guorong {tiao wu}. \parencite[109]{ernst98}\\
 S. may not with G. dance\\
 \trans{``Shujuan may not dance with Guorong.''} \hfill (may $>$ not; *not $>$ may) }
 \ex{\gll Shujuan bu keyi gen Guorong {tiao wu}.\\
@@ -697,7 +715,7 @@ S. not may with Guorong dance\\
 The Persian situation is particularly interesting. In most situations, while noun scrambling is mostly free, scrambling of the verb and its negation is more marked. This manifests in that inverse scope is very possible in positions involving a negation interfacing with another quantifier.
 
 \begin{exe}
-\ex {\gll Yek d\=aneshju \=an ket\=ab-r\=a na-x\=and. \\
+\ex {\gll Yek d\=aneshjui \=an ket\=ab-i-ro na-x\=and. \\
 one student that book-ACC not-read \\
 \trans{``A student didn't read that book.\label{par}''}}
 \end{exe}
@@ -723,7 +741,7 @@ Thus Persian movement verbs, which are uniquely more syntactically mobile show p
 
 Since my statement here is that scope ambiguity is merely the result of linear rigidity in syntax, not of some language-wide parameter, we should see the unambiguous surface scope of scrambling languages disappear in particular constructions where normally scramblible nominals are tied in position.
 
-Chinese, usually a very stablely scrambling or discourse configurational language generally allows the low cost movement of nominals as illustrated in (\ref{chin}) (from \textcite{aoun93}). These sentences, as we should expect are unambiguous and force surface scope. In (\ref{chin1}), everyone arrests different women, while in (\ref{chin2}), only one woman, who apparently is a prolific criminal, is arrested.
+Chinese, usually a very stablely scrambling or discourse configurational language generally allows the low cost movement of nominals as illustrated in (\ref{chin}). These sentences, as we should expect are unambiguous and force surface scope. In (\ref{chin1}), everyone arrests different women, while in (\ref{chin2}), only one woman, who apparently is a prolific criminal, is arrested.
 
 \begin{exe}
 \ex \begin{xlist}\label{chin}
@@ -743,7 +761,7 @@ The semantic object is promoted as the initial nominal, while the agent follows 
 
 \begin{exe}
 	\ex{ \begin{xlist}\label{beis}
-\ex[]{\gll Meigeren dou bei yige {n\"uren} zhuazou.\\
+\ex[]{\gll Meigeren dou bei yige {n\"uren} zhuazou. \parencite[142]{aoun89}\\
 everyone all PASS a woman arrest\\
 		\trans{``Everyone was arrested by a woman.''\label{chin3}} \hfill (${\forall}>{\exists}; {\exists}>{\forall}$)
 }
@@ -780,7 +798,6 @@ An approach to scope based in traditional syntax would be able account for the d
 
 This along with the fact that each of these differences correlate so well syntactic rigidity or flexibility point to a deeper relationship between scope and syntactic flexibility, a relationship which we have modeled causally above.
 
-
 \subsection{Why passivize when you can scramble?\label{passscr}}
 
 We noted in Section \ref{scbad} that our formal analysis treats the Speaker strategy \textit{Passive} strategy as a \emph{dominated strategy} to \textit{Scramble} in languages where \textit{Scramble} is available.
@@ -792,7 +809,7 @@ There may indeed be other reasons to use a passive in language.
 That said, I think there is a case to be made that indeed scrambling languages rely less on passivization and other transformations.
 Or at least, in scrambling languages where passives exist, passives find a distinct semantic or pragmatic niche.
 
-Take the earlier example of Chinese, a scrambling language\footnote{Or at least a discourse-configurational language. Regardless, a language with relatively free word order.}.
+Take the earlier example of Chinese, a scrambling language\footnote{Or at least a discourse-configurational language. Regardless, a language with relatively free word order. What is important for us is not the cause of the multiple constructions, but the fact that syntactic flexibility is an option.}.
 Chinese indeed have a construction sometimes called a ``passive'', and that is the \textit{bei} construction we mentioned in example (\ref{beis}).
 Like English passives, Chinese passives promote the object and demote the subject for a different argument structure schema, and a different order.
 
@@ -803,7 +820,6 @@ While it is not out objective here, it could certainly be argued that while pass
 This could feasibly be done in evolutionary game theory, but that is beyond our purview here.
 
 Still, implicitly, with the approach to language developed here, languages are bundles of communicative strategies employed for communication.
-
 
 \section{Theoretical Issues Solved and Opened}
 
@@ -837,7 +853,7 @@ This makes the otherwise disfavored $\forall>\exists$ interpretation the only lo
 \ex Some of an apple was eaten by every boy. \hfill ($\exists>\forall$, $\forall>\exists$)\label{jig}
 \end{exe}
 
-Note \emph{also} that if we imagine (\ref{anap}) in a discourse environment, we're most likely to think of contrastive focus or something else: ``An apple was eaten by every boy, a banana by every woman, a pineapple by every man\ldots'' 
+Note \emph{also} that if we imagine (\ref{anap}) in a discourse environment, we're most likely to think of contrastive focus or something else: ``An apple was eaten by every boy, a banana by every woman, a pineapple by every man\ldots''
 
 I do \emph{not} consider this a contradiction, but evidence in favor of the wider point.
 Scope ambiguities are trimmed away by pragmatic factors. In (\ref{anap}), it is world knowledge, in most of the other examples here, it's economy of derivation.
@@ -872,7 +888,7 @@ Clark's model, although a ``mere'' example in another more general argument, is 
 
 There is a possibility of combining this approach with ours into a linearly processed incremental game, where the Hearer weeds out possible interpretations with world knowledge accounted for model theoretically, partially based on cognitive coherence \parencite{langacker87}.
 
-\subsection{$some$ vs. $a$ vs. $one$; and other scope preferences}
+\subsection{$some$ vs. $a$ vs. $one$; and other scope preferences}\label{prefscope}
 
 Another domain on which our current theory here is insolvent or at least agnostic is the generally acknowledged tendency for some quantifiers to prefer to take higher or lower scope \parencite{feiman16}. Take the pair of sentences below.
 

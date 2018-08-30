@@ -1,0 +1,159 @@
+---
+title: "Quantifier Scope is Just All Fun and Games!"
+author: "Luke Smith"
+institute: "University of Arizona"
+header-includes:
+ - \usecolortheme[dark]{solarized}
+ - \usepackage{tikz}
+ - \usepackage{gb4e}
+ - \usetikzlibrary{calc}
+ - \usetikzlibrary{matrix}
+ - \usetikzlibrary{positioning}
+bibliography: /home/luke/Documents/LaTeX/uni.bib
+output:
+ beamer_presentation:
+  pandoc_args: ['--pdf-engine=xelatex']
+classoption: "aspectratio=1610"
+---
+
+# Quantifier Scope Basics
+
+Languages have quantifiers:
+
+>- **Universal quantifiers**, $(\forall)$: all, each, every
+>- **Existential quantifiers**, $(\exists)$: a, some, one
+>- And many others: numbers (3, 4, 5), most, few, etc.
+
+# The Problem with Scope
+
+Scope presents some unique problems:
+
+>- It is highly sensitive to linear order. (Surface scope preference.)
+>- Judgements vary a lot and are highly context-dependent. (Chosmky's aphasia)
+>- Scope is used in syntax, but less systematic than could be.
+
+# Scope without Syntax
+
+>- Solving for these traits and tendencies within syntax requires stipulating a lot in whatever grammatical theory you have.
+>- Instead: Quantifier scope is computed outside of the narrow language faculty.
+
+# Game Theory
+
+>- Tool for modeling strategic decision-making [@neumann44].
+>- $n$ number of **Players**, which can be people or abstraction.
+>- Each Player has a certain number of **Strategies** that they can choose from.
+>- Depending on the strategies chosen, players get **Payoffs**.
+>- Players might have knowledge of other players' decisions or not, or their interests might be aligned or not, etc. etc...
+
+# Scope
+
+>- Language is game played between a Speaker and Hearer.
+>- Speakers have different constructions/sentences they can use as strategies.
+>- Some constructions are marked or dispreferred (passives, clefts, inverse scope).
+>- Hearer's strategies are the different ways to interpret a potentially ambiguous sentence.
+>- Speakers and Hearers both want to reach a mutual understanding (non-zero sum).
+
+# The Game Tree for English
+
+\begin{figure}
+\begin{center}
+\tikzstyle{level 1}=[level distance=1.5cm, sibling distance=6.5cm]
+\tikzstyle{level 2}=[level distance=1.5cm, sibling distance=3cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=1.75cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=2cm]
+\begin{tikzpicture}
+\node {Nature}
+	child{
+		node{Speaker}
+		child{
+			node(d){Hearer}
+			child{
+				node{$\displaystyle\binom{c}{c}$}
+				edge from parent
+				node[left]{$S$}
+			}
+			child{
+				node{$\displaystyle\binom{-i}{-i}$}
+				edge from parent
+				node[right]{$I$}
+			}
+		edge from parent
+		node[left]{$A$}
+		}
+		child{
+			node(a){Hearer}
+			child{
+				node{$\displaystyle\binom{-p}{0}$}
+				edge from parent
+				node[left]{$S$}
+			}
+			child{
+				node{$\displaystyle\binom{c-p-i}{c-i}$}
+				edge from parent
+				node[right]{$I$}
+			}
+		edge from parent
+		node[right]{$P$}
+		}
+	edge from parent
+	node[left]{${Sub}>{Obj}$}
+	}
+	child{
+		node{Speaker}
+		child{
+			node(b){Hearer}
+			child{
+				node{$\displaystyle\binom{0}{0}$}
+				edge from parent
+				node[left]{$S$}
+			}
+			child{
+				node{$\displaystyle\binom{c-i}{c-i}$}
+				edge from parent
+				node[right]{$I$}
+			}
+		edge from parent
+		node[left]{$A$}
+		}
+		child{
+			node(c){Hearer}
+			child{
+				node{$\displaystyle\binom{c-p}{c}$}
+				edge from parent
+				node[left]{$S$}
+			}
+			child{
+				node{$\displaystyle\binom{-p-i}{-i}$}
+				edge from parent
+				node[right]{$I$}
+			}
+		edge from parent
+		node[right]{$P$}
+		}
+	edge from parent
+	node[right]{${Obj}>{Sub}$}
+	};
+\draw [dashed](d)to[in=180](b);
+\draw [dashed](a)to[in=180](c);
+\end{tikzpicture}
+\end{center}
+\end{figure}
+
+* $c$ for sucessful communication.
+* $p$ as a penalty for using the passive.
+* $i$ as a penalty for inverse scope.
+
+# What about a scrambling language?
+
+>- There is a "costless" alternative to the passive which does the same thing.
+
+\begin{exe}
+\ex asdfsad
+\ex sadasahsdkjf
+\end{exe}
+
+# Extensions
+
+>- The anaylsis isn't over.
+>- Myself, GMP, RWS and Robert Henderson are conspiring to extend the project.
+>- Empirical
